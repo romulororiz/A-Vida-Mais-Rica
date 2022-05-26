@@ -1,0 +1,51 @@
+.header {
+    max-width: 1800px;
+    margin: 0 auto;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.logo {
+    width: 33%;
+    min-width: 250px;
+}
+
+.header nav {
+    width: 33%;
+}
+
+.header ul {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.header a{
+    color: #fff;
+    padding: 2px 5px;
+    margin: 0 15px;
+}
+
+.inputWrapper {
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header input {
+    height: 25px;
+    width: 220px;
+    border-radius: 30px;
+    padding: 2px 5px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+
