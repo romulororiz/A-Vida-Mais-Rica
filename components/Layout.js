@@ -4,7 +4,7 @@ import styles from '@/styles/Layout.module.css';
 import Header from './Header';
 import Showcase from './Showcase';
 
-export default function Layout({ title, keywords, description, children }) {
+const Layout = ({ title, keywords, description, children }) => {
 	const router = useRouter();
 
 	return (
@@ -21,10 +21,12 @@ export default function Layout({ title, keywords, description, children }) {
 			</div>
 		</>
 	);
-}
+};
 
 Layout.defaultProps = {
 	title: 'A vida mais rica',
 	description: 'Blog sobre finanças',
 	keywords: 'finanças, sucesso, investimentos',
 };
+
+export default Layout;

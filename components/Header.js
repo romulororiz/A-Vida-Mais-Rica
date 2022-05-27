@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '@/styles/Header.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import Search from './Search';
 
 const Header = () => {
 	return (
@@ -17,7 +18,7 @@ const Header = () => {
 						<Link href='#'>Home</Link>
 					</li>
 					<li>
-						<Link href='#'>Posts</Link>
+						<Link href='#'>Blog</Link>
 					</li>
 					<li>
 						<Link href='#'>About</Link>
@@ -27,9 +28,7 @@ const Header = () => {
 					</li>
 				</ul>
 			</nav>
-			<div className={styles.inputWrapper}>
-				<input type='text' />
-			</div>
+			<Search />
 		</header>
 	);
 };
