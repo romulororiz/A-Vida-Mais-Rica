@@ -1,23 +1,40 @@
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .header {
     width: 100%;
-    margin: 0 auto;
     height: 85px;
+    padding: 0 60px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     font-weight: 500;
+    position: relative;
+    z-index: 99;
+}
+
+.logoBox {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    min-width: 150px;
 }
 
 .logo {
-    width: 33.3%;
-    min-width: 250px;
+    width: 75%;
 }
 
-.header nav {
-    width: 33.3%;
+.navStroke {
+    width: 100%;
+    margin-left: 50px;
+
 }
 
-.header ul {
+.navStroke ul {
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -26,16 +43,34 @@
     text-transform: uppercase;
 }
 
-.header a{
+.navStroke a{
     color: #fff;
-    padding: 2px 5px;
-    margin: 0 15px;
+    font-size: 16px;
+    padding: 6px 5px;
+    margin: 0 20px;
+    position: relative;
+    opacity: .85;
+    transition: .2s ease-in-out;
 }
 
-.inputWrapper {
-    width: 33.3%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.navStroke a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0%;
+    background: var(--secondary-color);
+    height: 2px;
+    transition: .2s ease-in-out;
+}
+
+.navStroke a:hover {
+    opacity: 1;
+}
+
+.navStroke a:hover:after {
+    width: 100%;
 }
 

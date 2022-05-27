@@ -7,12 +7,12 @@ import Search from './Search';
 const Header = () => {
 	return (
 		<header className={styles.header}>
-			<div className={styles.logo}>
+			<div className={styles.logoBox}>
 				<Link href='/'>
-					<Image width={280} height={60} src='/assets/logo.svg'></Image>
+					<img className={styles.logo} src='/assets/logo.svg'></img>
 				</Link>
 			</div>
-			<nav>
+			<nav className={styles.navStroke}>
 				<ul>
 					<li>
 						<Link href='#'>Home</Link>
