@@ -1,0 +1,99 @@
+
+.footer img {
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+    padding: 40px 30px;
+    background-color: #0a0a0a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.topFooter {
+    display: flex;
+    justify-content: space-around;
+    place-items: center;
+    width: 100%;
+}
+
+.logoBox {
+    width: 110px;
+    min-width: 100px;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.menuIcons ul {
+    display: flex;
+}
+
+.menuIcons a {
+    text-decoration: none;
+    margin: 0 20px;
+    color: #fff;
+    font-size: 14px;
+    opacity: .45;
+    transition: .2s ease-in-out;
+}
+
+.menuIcons a:hover {
+    opacity: 1;
+}
+
+.socialIcons {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    font-size: 25px;
+    cursor: pointer;
+
+}
+
+.bottomFooter {
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    width: 100%;
+}
+
+.bottomFooter p {
+    padding: 10px 0;
+    font-size: 12px;
+}
+
+.footer hr {
+    width: 90%;
+    opacity: .15;
+    margin: 15px auto;
+}
+
+@media (max-width: 775px) {
+    .logoBox {
+        display: none;
+    }
+
+    .topFooter {
+        flex-direction: column-reverse;
+    }
+
+    .menuIcons a {
+        margin: 0 16px;
+    }
+
+    .socialIcons {
+        margin-bottom: 15px;
+    }
+
+    .footer hr {
+        width: 60%;
+    }
+
+}

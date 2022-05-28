@@ -10,21 +10,28 @@
     background-position: center;
     position: relative;
     top: -85px;
+    margin-bottom: 35px;
 }
 
 .container {
-    position: absolute;
-    left: 10%;
+    display: flex;
+    place-content: left;
+    place-items: center;
+    width: 70%;
 }
 
 .showcaseBox {
-    width: 45%;
+    width: 600px;
     height: 100%;
+    max-height: 500px;
     position: relative;
-    padding: 50px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     place-content: center;
+    box-shadow: 2px 8px 24px -7px rgba(0,0,0,0.45);
+    border-radius: 10px;
+    animation: slideFromBottom 1.5s ease-in-out;
 }
 
 .showcaseBox::after {
@@ -49,17 +56,46 @@
 
 .topHeading {
     color: var(--secondary-color);
+    font-weight: 300;
 }
 
 .subHeading {
     color: #fff;
+    font-weight: 500;
+    margin-bottom: 30px;
 }
 
-.content {
+.lead {
     text-align: left;
     color: #fff;
+    font-weight: 300;
+    margin: 10px 0;
 }
 
-.content p {
-    margin: 10px 0;
+@keyframes slideFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 920px) {
+
+}
+
+@media (max-width: 500px) {
+    .showcase {
+        margin-bottom: 0;
+    }
+
+    .container {
+        width: 90%;
+        place-content: center;
+    }
+
 }

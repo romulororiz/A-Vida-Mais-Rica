@@ -1,8 +1,3 @@
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
 .header {
     width: 100%;
     height: 85px;
@@ -10,7 +5,7 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     font-weight: 500;
     position: relative;
     z-index: 99;
@@ -26,6 +21,7 @@
 
 .logo {
     width: 75%;
+    cursor: pointer;
 }
 
 .navStroke {
@@ -49,7 +45,6 @@
     padding: 6px 5px;
     margin: 0 20px;
     position: relative;
-    opacity: .85;
     transition: .2s ease-in-out;
 }
 
@@ -66,11 +61,144 @@
     transition: .2s ease-in-out;
 }
 
-.navStroke a:hover {
-    opacity: 1;
-}
-
 .navStroke a:hover:after {
     width: 100%;
 }
 
+.mobileNav {
+    display: none;
+}
+
+.menuIconMobile {
+    display: none;
+}
+
+/* Mobile Nav */
+@media (max-width: 920px) {
+.navStroke {
+    display: none;
+}
+
+.logoBox {
+    width: 150px;
+}
+
+.menuIconMobile {
+    margin-top: 20px;
+    display: flex;
+}
+
+.icon {
+    font-size: 35px;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+}
+
+.menuClose {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+
+
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    justify-content: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .95);
+    place-items: center;
+    transition: .3s ease-in-out;
+}
+
+.mobileNavHide {
+    left: -100%;
+}
+
+.mobileNavShow {
+    left: 0;
+}
+
+.mobileNav ul {
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+    padding: 25px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 200px;
+}
+
+.mobileNav li {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    transition: .1s ease-in-out;
+}
+
+.mobileNav a {
+    font-size: 16px;
+    color: #fff;
+}
+
+.mobileNav li:hover {
+    background-color: #fff;
+    cursor: pointer;
+
+}
+
+.mobileNav li:hover a {
+    color: #000;
+}
+
+.bottomMobileNav {
+    margin-top: 160px;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.socialIcons {
+    width: 65%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 500px) {
+    .logoBox {
+        margin-left: -40px;
+    }
+
+    .logo {
+        width: 65%;
+    }
+
+    .header {
+        padding: 0 30px;
+    }
+
+    .socialIcons {
+        width: 80%;
+        background-color: blue;
+    }
+
+    .icon {
+        font-size: 22px;
+    }
+
+    .bottomMobileNav {
+        background-color: red;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+}

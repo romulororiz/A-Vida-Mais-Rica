@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import styles from '@/styles/Layout.module.css';
 import Header from './Header';
 import Showcase from './Showcase';
+import Footer from './Footer';
 
 const Layout = ({ title, keywords, description, children }) => {
 	const router = useRouter();
@@ -19,6 +20,7 @@ const Layout = ({ title, keywords, description, children }) => {
 			<div className={styles.container}>
 				<div>{children}</div>
 			</div>
+			<Footer />
 		</>
 	);
 };

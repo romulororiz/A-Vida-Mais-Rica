@@ -2,9 +2,9 @@
 
 :root {
   --primary-color: #333;
-	--secondary-color: #d3c23e;
+	--secondary-color: #f5e24f;
 	--dark-color: #b6a632;
-	--light-color: #ffea4b;
+	--light-color: #f5f5f5;
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
 }
@@ -21,11 +21,14 @@ body {
   line-height: 1.6;
   font-size: 16px;
   color: #333;
-  background-color: #dbdbdb;
+  background-color: #e3e2e2;
 }
 
 a {
   text-decoration: none;
 }
 
+ul {
+  list-style-type: none;
+}
 

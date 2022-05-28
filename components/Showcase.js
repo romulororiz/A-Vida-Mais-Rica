@@ -7,19 +7,15 @@ const Showcase = () => {
 			<div className={styles.container}>
 				<div className={styles.showcaseBox}>
 					<div className={styles.textBox}>
-						<div className={styles.heading}>
-							<h1 className={styles.topHeading}>Lorem ipsum dolor</h1>
-							<h3 className={styles.subHeading}>
-								Lorem ipsum dolor sit amet consectetur adipisicing.
-							</h3>
-						</div>
-						<div className={styles.content}>
-							<p>
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
-								voluptatibus asperiores quis velit enim fuga voluptatem
-								dignissimos quasi minus possimus culpa maiores magnam commodi.
-							</p>
-						</div>
+						<h1 className={styles.topHeading}>Lorem ipsum dolor</h1>
+						<h3 className={styles.subHeading}>
+							Lorem ipsum dolor sit amet consectetur adipisicing.
+						</h3>
+						<p className={styles.lead}>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+							voluptatibus asperiores quis velit enim fuga voluptatem
+							dignissimos quasi minus possimus culpa maiores magnam commodi.
+						</p>
 					</div>
 				</div>
 			</div>

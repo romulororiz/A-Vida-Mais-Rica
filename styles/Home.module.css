@@ -1,0 +1,40 @@
+.latestPosts {
+    width: 100%;
+    margin-top: -30px;
+    margin-bottom: 100px;
+}
+
+.heading {
+    width: 350px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    border-bottom: 1px solid rgba(0,0,0,.4); 
+    line-height: 0.1em;
+}
+
+.heading span {
+    padding: 0 10px;
+    font-weight: 400;
+    background-color: #e3e2e2 ;
+    font-size: 32px;
+}
+
+.postsGrid {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 3fr));
+    gap: 20px;
+}
+
+@media (max-width: 500px) {
+    .heading {
+        width: 250px;
+    }
+
+    .heading span {
+        font-size: 28px;
+    }
+    
+}

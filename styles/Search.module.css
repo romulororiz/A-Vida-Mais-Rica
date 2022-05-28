@@ -51,3 +51,46 @@
     width: 150px;
     background-color: rgba(0, 0, 0, .35);
 }
+
+@media (max-width: 920px) {
+    .searchBox {
+        display: none;
+        justify-content: right;
+        width: 20%;
+    }
+
+    .searchInput {
+        width: 100px;
+        background-color: rgb(53, 53, 53);
+        color: #000;
+    }
+
+    .searchInput:focus {
+        width: 200px;
+        background-color: #fff;
+    }
+    
+    .searchInput::placeholder {
+        opacity: 1;
+    }
+
+    .searchInput::placeholder {
+        opacity: 0;
+        color: rgb(155, 155, 155);
+    }
+
+    .icon {
+        right: 10%;
+        opacity: 1;
+        color: #fff;
+    }
+
+    .searchInput:focus ~ .icon {
+        color: #000;
+    }
+
+}
+
+@media (max-width: 500px) {
+    
+}
