@@ -17,10 +17,10 @@ const Footer = () => {
 					<div className={styles.menuIcons}>
 						<ul>
 							<li>
-								<Link href='#'>Home</Link>
+								<Link href='/'>Home</Link>
 							</li>
 							<li>
-								<Link href='#'>Blog</Link>
+								<Link href='/posts'>Blog</Link>
 							</li>
 							<li>
 								<Link href='#'>About</Link>

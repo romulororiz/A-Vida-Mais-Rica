@@ -7,12 +7,21 @@
     align-items: center;
     justify-content: space-between;
     font-weight: 500;
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 99;
+    transition: all .2s ease;
 }
 
+/* sticky Header */
+.stickyHeader {
+    background-color: #0a0a0a;
+    transition: .2s ease
+}
+
+
 .logoBox {
-    margin-top: 15px;
+    margin-top: 12px;
     display: flex;
     justify-content: center;
     width: 200px;
@@ -22,6 +31,17 @@
 .logo {
     width: 75%;
     cursor: pointer;
+    transition: .2s ease;
+}
+
+/* sticky */
+.logoBoxSticky {
+    margin-top: 0;
+}
+
+.logoSticky {
+    width: 45%;
+    transition: .2s ease;
 }
 
 .navStroke {
@@ -37,11 +57,18 @@
     justify-content: center;
     list-style: none;
     text-transform: uppercase;
+    font-size: 16px;
+    transition: .2s ease;
+}
+
+/* sticky */
+.stickyNavItems a {
+    margin: 0 8px !important;
+    font-size: 12px !important;
 }
 
 .navStroke a{
     color: #fff;
-    font-size: 16px;
     padding: 6px 5px;
     margin: 0 20px;
     position: relative;
@@ -84,11 +111,10 @@
 }
 
 .menuIconMobile {
-    margin-top: 20px;
     display: flex;
 }
 
-.icon {
+.icon, .socialIcon {
     font-size: 35px;
     cursor: pointer;
     color: #fff;
@@ -126,7 +152,7 @@
 .mobileNav ul {
     width: 100%;
     height: 100%;
-    margin-top: 60px;
+    margin-top: 70px;
     padding: 25px 0;
     text-align: center;
     display: flex;
@@ -144,7 +170,6 @@
 }
 
 .mobileNav a {
-    font-size: 16px;
     color: #fff;
 }
 
@@ -180,21 +205,27 @@
         width: 65%;
     }
 
+    .logoSticky {
+        width: 45%;
+    }
+
+    .icon {
+        font-size: 20px;
+    }
+
     .header {
         padding: 0 30px;
     }
 
     .socialIcons {
-        width: 80%;
-        background-color: blue;
+        width: 100%;
     }
 
-    .icon {
-        font-size: 22px;
+    .socialIcon {
+        font-size: 28px;
     }
 
     .bottomMobileNav {
-        background-color: red;
         flex-direction: column;
         justify-content: center;
         align-items: center;

@@ -11,6 +11,7 @@
     position: relative;
     top: -85px;
     margin-bottom: 35px;
+    box-shadow: 0px 10px 19px -4px rgba(0,0,0,0.15);
 }
 
 .container {

@@ -16,7 +16,7 @@
 .heading span {
     padding: 0 10px;
     font-weight: 400;
-    background-color: #e3e2e2 ;
+    background-color: var(--light-color) ;
     font-size: 32px;
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '@/styles/Header.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -8,23 +8,45 @@ import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Header = () => {
 	const [showMenu, setShowMenu] = useState(false);
+	const [stickyNav, setStickyNav] = useState(false);
+
+	// Header background on scroll
+	useEffect(() => {
+		window.addEventListener('scroll', () => {
+			setStickyNav(document.documentElement.scrollTop > 100);
+		});
+	}, []);
 
 	return (
-		<header className={styles.header}>
-			<div className={styles.logoBox}>
+		<header
+			id='sticky-header'
+			className={`${styles.header} ${
+				stickyNav ? styles.stickyHeader : undefined
+			}`}
+		>
+			<div
+				className={`${styles.logoBox} ${
+					stickyNav ? styles.logoBoxSticky : undefined
+				}`}
+			>
 				<Link href='/'>
-					<img className={styles.logo} src='/assets/logo.svg'></img>
+					<img
+						className={`${styles.logo} ${
+							stickyNav ? styles.logoSticky : undefined
+						}`}
+						src='/assets/logo.svg'
+					></img>
 				</Link>
 			</div>
 
 			{/* Desktop Nav */}
 			<nav className={styles.navStroke}>
-				<ul>
+				<ul className={stickyNav ? styles.stickyNavItems : undefined}>
 					<li>
-						<Link href='#'>Home</Link>
+						<Link href='/'>Home</Link>
 					</li>
 					<li>
-						<Link href='#'>Blog</Link>
+						<Link href='/posts'>Blog</Link>
 					</li>
 					<li>
 						<Link href='#'>About</Link>
@@ -34,7 +56,7 @@ const Header = () => {
 					</li>
 				</ul>
 			</nav>
-			<Search />
+			<Search sticky={stickyNav} />
 
 			{/* Mobile Menu Icon */}
 			<div className={styles.menuIconMobile}>
@@ -61,10 +83,10 @@ const Header = () => {
 
 				<ul>
 					<li>
-						<Link href='#'>Home</Link>
+						<Link href='/'>Home</Link>
 					</li>
 					<li>
-						<Link href='#'>Blog</Link>
+						<Link href='/posts'>Blog</Link>
 					</li>
 					<li>
 						<Link href='#'>About</Link>
@@ -79,9 +101,9 @@ const Header = () => {
 					{/* Search */}
 					{showMenu && <Search />}
 					<div className={styles.socialIcons}>
-						<FaFacebook className={styles.icon} />
-						<FaTwitter className={styles.icon} />
-						<FaInstagram className={styles.icon} />
+						<FaFacebook className={styles.socialIcon} />
+						<FaTwitter className={styles.socialIcon} />
+						<FaInstagram className={styles.socialIcon} />
 					</div>
 				</div>
 			</nav>

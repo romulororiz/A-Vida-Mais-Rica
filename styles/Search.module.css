@@ -29,6 +29,30 @@
     transition: .1s ease-in-out;
 }
 
+/* Sticky */
+.stickySearch {
+    background-color: #fff;
+    transition: all .5s ease;
+    opacity: .45 !important;
+}
+
+.stickyIcon {
+    color: #000 !important;
+    opacity: .35 !important;
+    font-size: 14px !important;
+}
+
+.stickySearch:focus {
+    background-color: #fff !important;
+    opacity: 1 !important;
+    color: #000 !important;
+}
+
+.stickySearch:focus ~ .stickyIcon {
+    color: #000 !important;
+    opacity: 1 !important;
+}
+
 .icon {
     position: absolute;
     right: 5%;
@@ -36,11 +60,11 @@
     transform: translateY(-50%);
     cursor: pointer;
     color: #fff;
-    opacity: .05;
+    opacity: .35;
 }
 
 .searchInput:focus ~ .icon {
-    opacity: .9;
+    opacity: 1;
 }
 
 .searchInput, .icon {
