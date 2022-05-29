@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '@/styles/Footer.module.css';
-import Layout from './Layout';
 import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
@@ -20,7 +19,7 @@ const Footer = () => {
 								<Link href='/'>Home</Link>
 							</li>
 							<li>
-								<Link href='/posts'>Blog</Link>
+								<Link href='#'>Blog</Link>
 							</li>
 							<li>
 								<Link href='#'>About</Link>
@@ -38,7 +37,7 @@ const Footer = () => {
 				</div>
 				<hr></hr>
 				<div className={styles.bottomFooter}>
-					<p>All Rights Reserverd &copy;</p>
+					<p>All Rights Reserverd &copy; Romulo Roriz 2022</p>
 				</div>
 			</div>
 		</div>

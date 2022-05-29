@@ -1,22 +1,36 @@
 import Card from '@/components/Card';
 import Layout from '@/components/Layout';
 import styles from '@/styles/Home.module.css';
+import { API_URL } from '@/config/index';
+import qs from 'qs';
 
-const Home = () => {
+const HomePage = ({ articles }) => {
 	return (
 		<Layout>
 			<section className={styles.latestPosts}>
-				<h1 className={styles.heading}>
-					<span>Latest Posts</span>
-				</h1>
 				<section className={styles.postsGrid}>
-					<Card />
-					<Card />
-					<Card />
+					{articles.map(article => (
+						<Card key={article.id} article={article} />
+					))}
 				</section>
 			</section>
 		</Layout>
 	);
 };
 
-export default Home;
+export async function getStaticProps() {
+	const query = qs.stringify({
+		populate: ['image', 'category', 'author', 'author.picture'],
+	});
+	const res = await fetch(`${API_URL}/api/articles?${query}`);
+	const { data } = await res.json();
+
+	return {
+		props: {
+			articles: data,
+		},
+		revalidate: 1,
+	};
+}
+
+export default HomePage;

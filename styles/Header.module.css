@@ -15,7 +15,10 @@
 
 /* sticky Header */
 .stickyHeader {
-    background-color: #0a0a0a;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     transition: .2s ease
 }
 
@@ -108,6 +111,7 @@
 
 .logoBox {
     width: 150px;
+    margin-left: -40px;
 }
 
 .menuIconMobile {
@@ -197,10 +201,6 @@
 }
 
 @media (max-width: 500px) {
-    .logoBox {
-        margin-left: -40px;
-    }
-
     .logo {
         width: 65%;
     }

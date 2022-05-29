@@ -33,7 +33,7 @@
 .stickySearch {
     background-color: #fff;
     transition: all .5s ease;
-    opacity: .45 !important;
+    opacity: .25;
 }
 
 .stickyIcon {

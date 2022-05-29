@@ -1,39 +1,47 @@
 import React from 'react';
 import styles from '@/styles/Card.module.css';
+import Link from 'next/link';
+import { getStrapiMedia } from 'lib/media';
+import Moment from 'react-moment';
 
-const Card = () => {
+const Card = ({ article }) => {
+	const { title, description, image, category, slug, author, publishedAt } =
+		article.attributes;
+
 	return (
-		<div className={styles.card}>
-			<div className={styles.cardHeader}>
-				<img
-					src='https://source.unsplash.com/600x400/?computer'
-					alt='card__image'
-					width='600'
-					className={styles.cardImage}
-				/>
-			</div>
-			<div className={styles.cardBody}>
-				<span className={styles['tag' + 'tagBlue']}>Technology</span>
-				<h4>What's new in 2022 Tech</h4>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit sequi
-					perferendis molestiae.
-				</p>
-			</div>
-			<div className={styles.cardFooter}>
-				<div className={styles.user}>
+		<Link href={`/posts/${slug}`}>
+			<div className={styles.card}>
+				<div className={styles.cardHeader}>
 					<img
-						src='https://i.pravatar.cc/40?img=1'
-						alt='user__image'
-						className={styles.userImage}
+						src={getStrapiMedia(image)}
+						alt='card__image'
+						className={styles.cardImage}
 					/>
-					<div className={styles.userInfo}>
-						<h5>Jane Doe</h5>
-						<small>2h ago</small>
+				</div>
+				<div className={styles.cardBody}>
+					<span className={styles['tag' + 'tagBlue']}>
+						{category.data.attributes.name}
+					</span>
+					<h4>{title}</h4>
+					<p>{description}</p>
+				</div>
+				<div className={styles.cardFooter}>
+					<div className={styles.user}>
+						<img
+							src={getStrapiMedia(author.data.attributes.picture)}
+							alt='user__image'
+							className={styles.userImage}
+						/>
+						<div className={styles.userInfo}>
+							<h5>{author.data.attributes.name}</h5>
+							<small>
+								<Moment format='DD/MM/YYYY HH:mm'>{publishedAt}</Moment>
+							</small>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 
