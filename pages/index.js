@@ -5,6 +5,8 @@ import { API_URL } from '@/config/index';
 import qs from 'qs';
 
 const HomePage = ({ articles }) => {
+	console.log(articles);
+
 	return (
 		<Layout>
 			<section className={styles.latestPosts}>
@@ -20,7 +22,7 @@ const HomePage = ({ articles }) => {
 
 export async function getStaticProps() {
 	const query = qs.stringify({
-		populate: ['image', 'category', 'author', 'author.picture'],
+		populate: ['image', 'category', 'author', 'author.image'],
 	});
 	const res = await fetch(`${API_URL}/api/articles?${query}`);
 	const { data } = await res.json();

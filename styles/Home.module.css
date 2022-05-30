@@ -22,7 +22,7 @@
 
 .postsGrid {
     display: grid;
-    place-items: center;
+    place-items: top;
     justify-content: center;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 10px;

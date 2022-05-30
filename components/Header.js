@@ -12,6 +12,10 @@ const Header = () => {
 
 	// Header background on scroll
 	useEffect(() => {
+		if (document.documentElement.scrollTop > 100) {
+			setStickyNav(true);
+		}
+
 		window.addEventListener('scroll', () => {
 			setStickyNav(document.documentElement.scrollTop > 100);
 		});
@@ -70,9 +74,7 @@ const Header = () => {
 
 			{/* Mobile Nav */}
 			<nav
-				className={`${styles.mobileNav} ${
-					showMenu ? styles.mobileNavShow : styles.mobileNavHide
-				}`}
+				className={`${styles.mobileNav} ${showMenu && styles.mobileNavShow}`}
 			>
 				{showMenu && (
 					<IoClose
