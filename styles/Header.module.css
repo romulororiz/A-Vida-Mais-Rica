@@ -13,18 +13,20 @@
     transition: all .2s ease;
 }
 
+.headerWithBg {
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+    padding: 50px 60px;
+}
+
 /* sticky Header */
 .stickyHeader {
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.6px);
-    -webkit-backdrop-filter: blur(8.6px);
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
     transition: .2s ease
 }
 
-
 .logoBox {
-    margin-top: 12px;
     display: flex;
     justify-content: center;
     width: 200px;
@@ -47,13 +49,13 @@
     transition: .2s ease;
 }
 
-.navStroke {
+.nav {
     width: 100%;
     margin-left: 50px;
 
 }
 
-.navStroke ul {
+.nav ul {
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -70,7 +72,7 @@
     font-size: 12px !important;
 }
 
-.navStroke a{
+.nav a{
     color: #fff;
     padding: 6px 5px;
     margin: 0 20px;
@@ -78,7 +80,7 @@
     transition: .2s ease-in-out;
 }
 
-.navStroke a::after {
+.nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -91,7 +93,7 @@
     transition: .2s ease-in-out;
 }
 
-.navStroke a:hover:after {
+.nav a:hover:after {
     width: 100%;
 }
 
@@ -105,7 +107,15 @@
 
 /* Mobile Nav */
 @media (max-width: 920px) {
-.navStroke {
+.header {
+    padding: 0 30px;
+}
+
+.headerWithBg {
+    padding: 0 30px;
+}
+
+.nav {
     display: none;
 }
 
@@ -127,21 +137,23 @@
 
 .menuClose {
     position: absolute;
-    right: 50px;
-    top: 25px;
+    right: 30px;
+    top: 30px;
 }
 
 
 .mobileNav {
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     justify-content: center;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, .95);
+    background-color: rgba(0, 0, 0, .85);
+    backdrop-filter: blur(9.2px);
+    -webkit-backdrop-filter: blur(9.2px);
     place-items: center;
     transition: .2s ease-in-out;
     opacity: 0;
@@ -161,7 +173,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
     height: 200px;
 }
@@ -188,10 +200,14 @@
 }
 
 .bottomMobileNav {
-    margin-top: 160px;
+    margin-top: 100px;
     width: 40%;
+    height: 20%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    justify-content: space-evenly;
 }
 
 .socialIcons {
@@ -213,9 +229,6 @@
         font-size: 28px;
     }
 
-    .header {
-        padding: 0 30px;
-    }
 
     .socialIcons {
         width: 100%;

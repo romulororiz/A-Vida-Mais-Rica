@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from '@/styles/Card.module.css';
 import Link from 'next/link';
-import { getStrapiMedia } from 'lib/media';
 import Moment from 'react-moment';
-import NextImage from './Image';
+import NextImage from '@/components/Image';
 
 const Card = ({ article }) => {
 	const { title, description, category, image, slug, author, publishedAt } =

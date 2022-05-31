@@ -1,31 +1,28 @@
 import Card from '@/components/Card';
 import Layout from '@/components/Layout';
 import styles from '@/styles/Home.module.css';
-import { API_URL } from '@/config/index';
-import qs from 'qs';
+import { fetchAPI } from 'lib/api';
 
 const HomePage = ({ articles }) => {
-	console.log(articles);
-
 	return (
 		<Layout>
-			<section className={styles.latestPosts}>
-				<section className={styles.postsGrid}>
+			<div className={styles.latestPosts}>
+				<div className={styles.postsGrid}>
 					{articles.map(article => (
 						<Card key={article.id} article={article} />
 					))}
-				</section>
-			</section>
+				</div>
+			</div>
 		</Layout>
 	);
 };
 
 export async function getStaticProps() {
-	const query = qs.stringify({
+	const res = await fetchAPI('/articles', {
 		populate: ['image', 'category', 'author', 'author.image'],
 	});
-	const res = await fetch(`${API_URL}/api/articles?${query}`);
-	const { data } = await res.json();
+
+	const { data } = res;
 
 	return {
 		props: {

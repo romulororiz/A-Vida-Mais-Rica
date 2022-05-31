@@ -58,16 +58,12 @@
   color: #666;
 }
 
-@media (max-width: 920px) {
-  .cardImage {
-    max-height: 420px;
-  }
-
-}
-
-  
 @media (max-width: 500px) {
   .cardBody h4 {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .cardBody p {
+    font-size: 14px;
   }
 }

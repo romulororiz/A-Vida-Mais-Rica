@@ -5,27 +5,46 @@ import Image from 'next/image';
 import Search from './Search';
 import { IoMenu, IoClose } from 'react-icons/io5';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { useRouter } from 'next/router';
 
 const Header = () => {
 	const [showMenu, setShowMenu] = useState(false);
 	const [stickyNav, setStickyNav] = useState(false);
+	const [headerWithBg, setHeaderWithBg] = useState(false);
 
-	// Header background on scroll
+	const router = useRouter();
+
 	useEffect(() => {
-		if (document.documentElement.scrollTop > 100) {
+		// Header Bg when not on HomePage
+		if (router.pathname !== '/') {
+			setHeaderWithBg(true);
+		}
+
+		// Sticky header persists after page refresh
+		if (document.documentElement.scrollTop > 50) {
 			setStickyNav(true);
 		}
 
+		// Sticky header on scroll
 		window.addEventListener('scroll', () => {
-			setStickyNav(document.documentElement.scrollTop > 100);
+			setStickyNav(document.documentElement.scrollTop > 50);
 		});
 	}, []);
 
+	// Mobile menu handler
+	const mobileMenuHandler = () => {
+		setShowMenu(!showMenu);
+	};
+
 	return (
 		<header
-			id='sticky-header'
+			id='header'
 			className={`${styles.header} ${
-				stickyNav ? styles.stickyHeader : undefined
+				stickyNav
+					? styles.stickyHeader
+					: headerWithBg
+					? styles.headerWithBg
+					: undefined
 			}`}
 		>
 			<div
@@ -44,7 +63,7 @@ const Header = () => {
 			</div>
 
 			{/* Desktop Nav */}
-			<nav className={styles.navStroke}>
+			<nav className={styles.nav}>
 				<ul className={stickyNav ? styles.stickyNavItems : undefined}>
 					<li>
 						<Link href='/'>Home</Link>
@@ -60,16 +79,12 @@ const Header = () => {
 					</li>
 				</ul>
 			</nav>
-			<Search sticky={stickyNav} />
+
+			<Search sticky={stickyNav} headerBg={headerWithBg} />
 
 			{/* Mobile Menu Icon */}
 			<div className={styles.menuIconMobile}>
-				{!showMenu && (
-					<IoMenu
-						onClick={() => setShowMenu(!showMenu)}
-						className={`${styles.icon}`}
-					/>
-				)}
+				<IoMenu onClick={mobileMenuHandler} className={`${styles.icon}`} />
 			</div>
 
 			{/* Mobile Nav */}
@@ -78,7 +93,7 @@ const Header = () => {
 			>
 				{showMenu && (
 					<IoClose
-						onClick={() => setShowMenu(!showMenu)}
+						onClick={mobileMenuHandler}
 						className={`${styles.icon} ${styles.menuClose}`}
 					/>
 				)}
@@ -101,7 +116,8 @@ const Header = () => {
 				{/* Social Icons */}
 				<div className={styles.bottomMobileNav}>
 					{/* Search */}
-					{showMenu && <Search />}
+					<Search />
+
 					<div className={styles.socialIcons}>
 						<FaFacebook className={styles.socialIcon} />
 						<FaTwitter className={styles.socialIcon} />

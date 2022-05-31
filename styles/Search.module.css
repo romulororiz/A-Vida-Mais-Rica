@@ -19,6 +19,16 @@
     transition-timing-function: cubic-bezier(0.3, 1.5, 0.6, 1);
 }
 
+.headerBgSearchInput {
+    background-color: #fff;
+    opacity: .25;
+}
+
+.headerBgSearchInput:focus {
+    background-color: #fff !important;
+    opacity: 1 !important;
+}
+
 .searchInput::placeholder {
     opacity: 0;
     color: rgb(155, 155, 155);
@@ -32,14 +42,13 @@
 /* Sticky */
 .stickySearch {
     background-color: #fff;
-    transition: all .5s ease;
     opacity: .25;
+    transition-timing-function: cubic-bezier(0.3, 1.5, 0.6, 1);
 }
 
 .stickyIcon {
     color: #000 !important;
     opacity: .35 !important;
-    font-size: 14px !important;
 }
 
 .stickySearch:focus {
@@ -63,6 +72,16 @@
     opacity: .35;
 }
 
+.headerBgIcon {
+    color: #000 !important;
+    opacity: .35 !important;
+}
+
+.searchInput:focus ~ .headerBgIcon {
+    opacity: 1 !important;
+    
+}
+
 .searchInput:focus ~ .icon {
     opacity: 1;
 }
@@ -78,6 +97,7 @@
 
 @media (max-width: 920px) {
     .searchBox {
+        /* Fix Search Bar showing only on menuMobile when responsive */
         display: none;
         justify-content: right;
         width: 20%;
@@ -113,8 +133,4 @@
         color: #000;
     }
 
-}
-
-@media (max-width: 500px) {
-    
 }
