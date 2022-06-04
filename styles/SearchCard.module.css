@@ -1,0 +1,43 @@
+.card {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: rgba(35, 35, 35, 0.95);
+}
+
+.cardInfo {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.cardInfo h2 {
+    width: 90%;
+    margin-bottom: -20px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #fff;
+}
+
+.catAndAuthor {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.cardInfo p, .cardInfo span {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+}
+
+
+.cardImage {
+    padding: 12px;
+}

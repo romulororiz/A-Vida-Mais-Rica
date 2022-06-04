@@ -96,6 +96,15 @@
     background-color: rgba(0, 0, 0, .35);
 }
 
+.searchResults {
+    width: 500px;
+    overflow: hidden;
+    margin: 9px 0 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+}
+
 @media (max-width: 920px) {
     .searchBox {
         /* Fix Search Bar showing only on menuMobile when responsive */

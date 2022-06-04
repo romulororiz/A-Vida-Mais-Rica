@@ -4,10 +4,10 @@ import styles from '@/styles/PostPage.module.css';
 import { fetchAPI } from 'lib/api';
 import NextImage from '@/components/Image';
 import Moment from 'react-moment';
-import ReactMarkdown from 'react-markdown';
-import { useRouter } from 'next/router';
 import Sidebar from '@/components/Sidebar';
 import MarkdownView from 'react-showdown';
+import { FaChevronLeft } from 'react-icons/fa';
+import Link from 'next/link';
 
 const PostPage = ({ article }) => {
 	const {
@@ -27,6 +27,14 @@ const PostPage = ({ article }) => {
 			<div className={styles.postPage}>
 				<div>
 					<div className={styles.headingBox}>
+						<div className={styles.backToHome}>
+							<Link href={'/'}>
+								<a>
+									<FaChevronLeft className={styles.icon} />
+									Back to Home
+								</a>
+							</Link>
+						</div>
 						<div className={styles.user}>
 							<div className={styles.userAvatar}>
 								<NextImage image={author.data.attributes.image} />

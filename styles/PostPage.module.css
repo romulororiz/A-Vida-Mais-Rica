@@ -6,7 +6,27 @@
 }
 
 .headingBox {
-  margin: 60px 0 20px;
+  margin: 60px 0 15px;
+}
+
+.backToHome {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.backToHome a {
+  display: flex;
+  place-items: center;
+  place-content: center;
+  color: #000;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.icon {
+  color: #000;
+  margin-right: 3px;
 }
 
 .user {

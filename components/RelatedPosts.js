@@ -31,11 +31,6 @@ const RelatedPosts = ({ article }) => {
 			currentArticle.attributes.category.data.attributes.name
 	);
 
-	// todo
-	// Placeholder message when there's no article
-	// category selected
-	// use useState for storage
-
 	useEffect(() => {
 		const fetchArticles = async () => {
 			setIsLoading(true);

@@ -115,9 +115,7 @@ const Header = () => {
 
 				{/* Social Icons */}
 				<div className={styles.bottomMobileNav}>
-					{/* Search */}
-					<Search />
-
+					{/* Search Component */}
 					<div className={styles.socialIcons}>
 						<FaFacebook className={styles.socialIcon} />
 						<FaTwitter className={styles.socialIcon} />
