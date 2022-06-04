@@ -8,9 +8,11 @@ const HomePage = ({ articles }) => {
 		<Layout>
 			<div className={styles.latestPosts}>
 				<div className={styles.postsGrid}>
-					{articles.map(article => (
-						<Card key={article.id} article={article} />
-					))}
+					{articles.length ? (
+						articles.map(article => <Card key={article.id} article={article} />)
+					) : (
+						<h2>No Articles to show</h2>
+					)}
 				</div>
 			</div>
 		</Layout>
@@ -18,11 +20,13 @@ const HomePage = ({ articles }) => {
 };
 
 export async function getStaticProps() {
-	const res = await fetchAPI('/articles', {
+	const articlesRes = await fetchAPI('/articles', {
 		populate: ['image', 'category', 'author', 'author.image'],
 	});
 
-	const { data } = res;
+	const { data } = articlesRes;
+
+	
 
 	return {
 		props: {

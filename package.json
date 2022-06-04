@@ -9,6 +9,8 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"axios": "^0.27.2",
+		"cors": "^2.8.5",
 		"moment": "^2.29.3",
 		"next": "12.1.6",
 		"qs": "^6.10.3",
@@ -16,7 +18,8 @@
 		"react-dom": "18.1.0",
 		"react-icons": "^4.3.1",
 		"react-markdown": "^8.0.3",
-		"react-moment": "^1.1.2"
+		"react-moment": "^1.1.2",
+		"react-showdown": "^2.3.1"
 	},
 	"devDependencies": {
 		"@types/qs": "^6.9.7",

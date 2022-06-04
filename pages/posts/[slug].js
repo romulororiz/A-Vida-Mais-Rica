@@ -6,6 +6,8 @@ import NextImage from '@/components/Image';
 import Moment from 'react-moment';
 import ReactMarkdown from 'react-markdown';
 import { useRouter } from 'next/router';
+import Sidebar from '@/components/Sidebar';
+import MarkdownView from 'react-showdown';
 
 const PostPage = ({ article }) => {
 	const {
@@ -23,35 +25,38 @@ const PostPage = ({ article }) => {
 		<Layout title={title}>
 			{/* Title and Author section */}
 			<div className={styles.postPage}>
-				<div className={styles.headingBox}>
-					<div className={styles.user}>
-						<div className={styles.userAvatar}>
-							<NextImage image={author.data.attributes.image} />
+				<div>
+					<div className={styles.headingBox}>
+						<div className={styles.user}>
+							<div className={styles.userAvatar}>
+								<NextImage image={author.data.attributes.image} />
+							</div>
+							<div className={styles.userInfo}>
+								<h5>{author.data.attributes.name}</h5>
+								<small>
+									<Moment format='D MMM[,] YYYY [at] HH:mm A'>
+										{publishedAt}
+									</Moment>
+								</small>
+							</div>
 						</div>
-						<div className={styles.userInfo}>
-							<h5>{author.data.attributes.name}</h5>
-							<small>
-								<Moment format='D MMM[,] YYYY [at] HH:mm A'>
-									{publishedAt}
-								</Moment>
-							</small>
+						<div className={styles.postTitle}>
+							<h1>{title}</h1>
 						</div>
 					</div>
-					<div className={styles.postTitle}>
-						<h1>{title}</h1>
+
+					{/* Showcase - Post image / images (?) */}
+					<div className={styles.postImage}>
+						<NextImage image={image} />
+						<sub>{description}</sub>
+					</div>
+
+					{/* Post Content */}
+					<div className={styles.postContent}>
+						<MarkdownView markdown={content} />
 					</div>
 				</div>
-
-				{/* Showcase - Post image / images (?) */}
-				<div className={styles.postImage}>
-					<NextImage image={image} />
-					<sub>{description}</sub>
-				</div>
-
-				{/* Post Content */}
-				<div className={styles.postContent}>
-					<ReactMarkdown>{content}</ReactMarkdown>
-				</div>
+				<Sidebar article={article} />
 			</div>
 		</Layout>
 	);
@@ -72,16 +77,19 @@ export async function getStaticPaths() {
 	};
 }
 
-export async function getStaticProps({ params: { slug } }) {
-	const res = await fetchAPI('/articles', {
+export async function getStaticProps({ params }) {
+	const articlesRes = await fetchAPI('/articles', {
 		populate: ['image', 'category', 'author', 'author.image'],
+		filters: {
+			slug: params.slug,
+		},
 	});
 
-	const { data } = res;
+	const { data } = articlesRes;
 
 	return {
 		props: {
-			article: data.filter(art => art.attributes.slug === slug)[0],
+			article: data[0],
 		},
 		revalidate: 1,
 	};

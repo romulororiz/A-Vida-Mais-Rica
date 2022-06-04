@@ -22,6 +22,7 @@
 .headerBgSearchInput {
     background-color: #fff;
     opacity: .25;
+    color: #000;
 }
 
 .headerBgSearchInput:focus {

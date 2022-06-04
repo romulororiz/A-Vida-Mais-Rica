@@ -1,0 +1,39 @@
+.relatedPostsBox {
+    width: 100%;
+}
+
+.heading {
+    position: relative;
+    padding: 0 10px;
+    margin-bottom: 25px;
+}
+
+.heading::after {
+    content: '';
+    height: 70%;
+    width: 3px;
+    position: absolute;
+    top: 18%;
+    left: 0;
+    background: rgba(0,0,0, .9);
+}
+
+@media (max-width: 920px) {
+    .relatedPosts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 12px;
+    }
+
+    .relatedPostsBox {
+        margin-top: -35px;
+    }
+
+    .heading {
+        text-align: center;
+    }
+
+    .heading::after {
+        content: none
+    }
+}

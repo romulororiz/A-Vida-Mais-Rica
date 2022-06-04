@@ -12,6 +12,9 @@ const Image = ({ image }) => {
 			objectFit='cover'
 			src={getStrapiMedia(image)}
 			alt={alternativeText || ''}
+			priority
+			placeholder='blur'
+			blurDataURL={getStrapiMedia(image)}
 		/>
 	);
 };

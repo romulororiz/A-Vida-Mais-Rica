@@ -1,3 +1,9 @@
+.postPage {
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 20px;
+}
 
 .headingBox {
   margin: 60px 0 20px;
@@ -9,10 +15,6 @@
   padding: 5px 0;
 }
 
-.userBox {
-  padding: 8px 0;
-}
-
 .userAvatar {
   display: grid;
   width: 45px;
@@ -22,7 +24,17 @@
   margin-right: 5px;
 }
 
-
 .userInfo > small {
   color: #666;
+}
+
+.postContent {
+  padding: 15px 0;
+}
+
+@media (max-width: 920px) {
+  .postPage {
+    grid-template-columns: none;
+    grid-template-rows: 1fr;
+  }
 }

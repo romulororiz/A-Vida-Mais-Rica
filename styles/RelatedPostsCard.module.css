@@ -1,0 +1,14 @@
+.card{ 
+    margin-bottom: 25px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.cardBody {
+    margin-top: 5px;
+    line-height: 1.3;
+}
+
+.cardDate small {
+    color: #666;
+}
