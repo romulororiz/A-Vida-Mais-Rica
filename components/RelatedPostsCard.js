@@ -8,7 +8,7 @@ const RelatedPostsCard = ({ article }) => {
 	const { title, slug, image, publishedAt } = article.attributes;
 
 	return (
-		<Link href={`/posts/${slug}`}>
+		<Link href={`/blog/${slug}`}>
 			<div className={styles.card}>
 				<div className={styles.cardImage}>
 					<NextImage image={image} />

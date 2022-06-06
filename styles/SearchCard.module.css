@@ -2,12 +2,20 @@
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.97);
+    margin-bottom: 10px;
     cursor: pointer;
+    border-radius: 6px;
+    position: relative;
+    z-index: 99;
+    overflow: auto;
+    transition: .2s ease-in-out;
 }
 
 .card:hover {
-    background-color: rgba(35, 35, 35, 0.95);
+    background-color: rgba(59, 59, 59, 0.95);
+    box-shadow: 0px 17px 12px -7px rgba(0, 0, 0, 0.804);
+
 }
 
 .cardInfo {
@@ -27,8 +35,9 @@
 
 .catAndAuthor {
     display: flex;
-    justify-content: space-between;
-    width: 70%;
+    justify-content: space-evenly;
+    width: 100%;
+
 }
 
 .cardInfo p, .cardInfo span {
@@ -39,5 +48,5 @@
 
 
 .cardImage {
-    padding: 12px;
+    padding: 8px;
 }

@@ -85,7 +85,7 @@ const Search = ({ sticky, headerBg }) => {
 
 			{data && active && (
 				<ul className={styles.searchResults}>
-					{data.slice(0, 5).map(result => (
+					{data.slice(0, 5).sort().map(result => (
 						<SearchCard result={result} />
 					))}
 				</ul>

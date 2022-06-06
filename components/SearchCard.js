@@ -8,7 +8,7 @@ const SearchCard = ({ result }) => {
 	const slicedTitle = title.slice(0, 20);
 
 	return (
-		<Link href={`/posts/${slug}`}>
+		<Link href={`/blog/${slug}`}>
 			<div className={styles.card}>
 				<div className={styles.cardInfo}>
 					<h2>{title.length < 30 ? title : `${slicedTitle}...`}</h2>

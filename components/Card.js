@@ -4,30 +4,36 @@ import Link from 'next/link';
 import Moment from 'react-moment';
 import NextImage from '@/components/Image';
 
-const Card = ({ article }) => {
-	const { title, description, category, image, slug, author, publishedAt } =
-		article.attributes;
-
+const Card = ({
+	image,
+	hoverBtnLink,
+	category,
+	title,
+	description,
+	authorImage,
+	authorName,
+	publishedAt,
+}) => {
 	return (
 		<div className={styles.card}>
 			<div className={styles.cardHeader}>
 				<div className={styles.cardImage}>
 					<NextImage image={image} />
 				</div>
-				<Link href={`/posts/${slug}`}>Read More</Link>
+				<Link href={hoverBtnLink}>Read More</Link>
 			</div>
 			<div className={styles.cardBody}>
-				<span>{category.data.attributes.name}</span>
+				<span>{category ? category : ''}</span>
 				<h4>{title}</h4>
-				<p>{description}</p>
+				<p>{description.slice(0, 120)}...</p>
 			</div>
 			<div className={styles.cardFooter}>
 				<div className={styles.user}>
 					<div className={styles.userAvatar}>
-						<NextImage image={author.data.attributes.image} />
+						<NextImage image={authorImage} />
 					</div>
 					<div className={styles.userInfo}>
-						<h5>{author.data.attributes.name}</h5>
+						<h5>{authorName}</h5>
 						<small>
 							<Moment format='D MMM[,] YYYY [at] HH:mm A'>{publishedAt}</Moment>
 						</small>

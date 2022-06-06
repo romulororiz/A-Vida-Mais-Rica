@@ -6,6 +6,7 @@
     position: relative;
     padding: 0 10px;
     margin-bottom: 25px;
+    font-size: 16px;
 }
 
 .heading::after {
@@ -13,7 +14,7 @@
     height: 70%;
     width: 3px;
     position: absolute;
-    top: 18%;
+    top: 15%;
     left: 0;
     background: rgba(0,0,0, .9);
 }
@@ -36,4 +37,13 @@
     .heading::after {
         content: none
     }
+}
+
+@media (max-width: 575px) {
+    .relatedPosts {
+        grid-template-columns: none;
+        grid-template-rows: repeat(3, 1fr);
+        margin-top: 20px;
+    }
+
 }

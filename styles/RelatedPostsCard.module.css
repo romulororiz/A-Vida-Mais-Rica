@@ -12,3 +12,9 @@
 .cardDate small {
     color: #666;
 }
+
+@media (max-width: 575px) {
+    .cardImage {
+        width: 100%;
+    }
+}

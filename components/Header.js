@@ -4,7 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Search from './Search';
 import { IoMenu, IoClose } from 'react-icons/io5';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import {
+	FaFacebook,
+	FaTwitter,
+	FaInstagram,
+	FaChevronDown,
+} from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
 const Header = () => {
@@ -68,14 +73,31 @@ const Header = () => {
 					<li>
 						<Link href='/'>Home</Link>
 					</li>
-					<li>
-						<Link href='#'>Blog</Link>
+					<li className={styles.dropdownNavItem}>
+						<a>Blog</a>
+						<div className={styles.dropdownContent}>
+							<Link
+								className={styles.dropdownItem}
+								href='/blog/category/nature'
+							>
+								Nature
+							</Link>
+							<Link className={styles.dropdownItem} href='/blog/category/food'>
+								Food
+							</Link>
+							<Link className={styles.dropdownItem} href='/blog/category/tech'>
+								Tech
+							</Link>
+							<Link className={styles.dropdownItem} href='/blog/category/news'>
+								News
+							</Link>
+						</div>
 					</li>
 					<li>
-						<Link href='#'>About</Link>
+						<Link href='/about'>About</Link>
 					</li>
 					<li>
-						<Link href='#'>Contact</Link>
+						<Link href='/contact'>Contact</Link>
 					</li>
 				</ul>
 			</nav>

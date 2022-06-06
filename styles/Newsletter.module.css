@@ -1,0 +1,75 @@
+.newsletter {
+    margin: 35px 0;
+}
+
+.heading {
+    position: relative;
+    padding: 0 10px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.heading::after {
+    content: '';
+    height: 70%;
+    width: 3px;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    background: rgba(0,0,0, .9);
+}
+
+.newsletterInputBox {
+    margin-top: -15px;
+    text-align: left;
+}
+
+.newsletterInputBox label {
+    font-size: 15px;
+}
+
+.newsletterInput {
+    margin-top: 8px;
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #fff;
+    display: flex;
+    position: relative;
+}
+
+.newsletterInput input{
+    border: 1px solid #ccc;
+    outline: none;
+    background: none;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    padding: 0 12px;
+    transition: .5s ease-in-out;
+}
+
+.newsletterInput input:focus {
+    border: 1px solid #000;
+}
+
+.newsletterInput a {
+    width: 55px;
+    display: flex;
+    place-content: center;
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    border-radius: 2px;
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
+    transition: all .2s ease;
+    font-size: 12px;
+}
+
+.newsletterInput a:hover {
+    background-color: rgba(81, 81, 81, 0.95);
+}

@@ -1,4 +1,53 @@
 .sidebar {
-    margin: 60px 25px;
-    width: 95%;
+    margin: 0 15px;
+    width: 100%;
+}
+
+.socialIcons {
+    margin: 35px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+}
+
+.socialHeading {
+    position: relative;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.socialHeading::after {
+    content: '';
+    height: 70%;
+    width: 3px;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    background: rgba(0,0,0, .9);
+}
+
+.icon {
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.icons {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    margin: 15px auto 0 auto;
+}
+
+.sidebar hr {
+    height: 1px;
+    border: none;
+    background-color: #ccc;
+
+}
+
+@media (max-width: 920px) {
+    .sidebar {
+        margin: 45px auto;
+    }
 }
