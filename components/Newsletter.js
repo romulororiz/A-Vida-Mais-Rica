@@ -31,7 +31,7 @@ const Newsletter = ({ heading, title, lead, homepage }) => {
 				>
 					<input
 						type='text'
-						placeholder='Your Email'
+						placeholder='Insira seu email aqui'
 						id='newsletterSection'
 						onBlur={e => (e.target.value = '')}
 					/>

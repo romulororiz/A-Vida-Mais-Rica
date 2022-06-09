@@ -15,20 +15,20 @@ const Header = () => {
 	const router = useRouter();
 
 	useEffect(() => {
-		// Header Bg when not on HomePage
-		if (router.pathname !== '/') {
-			setHeaderWithBg(true);
-		}
+		// Sticky header on scroll
+		window.addEventListener('scroll', () => {
+			setStickyNav(document.documentElement.scrollTop > 50);
+		});
 
 		// Sticky header persists after page refresh
 		if (document.documentElement.scrollTop > 50) {
 			setStickyNav(true);
 		}
 
-		// Sticky header on scroll
-		window.addEventListener('scroll', () => {
-			setStickyNav(document.documentElement.scrollTop > 50);
-		});
+		// Header Bg when not on HomePage
+		if (router.pathname !== '/') {
+			setHeaderWithBg(true);
+		}
 	}, []);
 
 	// Mobile menu handler
@@ -154,10 +154,10 @@ const Header = () => {
 						</ul> */}
 					</li>
 					<li>
-						<Link href='#'>About</Link>
+						<Link href='/about'>About</Link>
 					</li>
 					<li>
-						<Link href='#'>Contact</Link>
+						<Link href='/contact'>Contact</Link>
 					</li>
 				</ul>
 

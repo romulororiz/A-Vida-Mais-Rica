@@ -23,7 +23,7 @@ const CategoryPage = ({ category }) => {
 				<h1 className={styles.heading}>{name}</h1>
 				<div className={styles.postGrid}>
 					{articles.data.length > 0 &&
-						articles.data.map((article, index) => (
+						articles.data.map(article => (
 							<Card
 								key={article.id}
 								image={article.attributes.image}

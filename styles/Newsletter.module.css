@@ -137,7 +137,7 @@
         min-width: 100%;
     }
 
-    .newsletterInputHomepage input {
-        font-size: 13px;
+    .newsletterInputHomepage input, .newsletterInput input {
+        font-size: 14px;
     }
 }

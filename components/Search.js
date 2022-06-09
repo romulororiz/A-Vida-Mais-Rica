@@ -71,7 +71,7 @@ const Search = ({ sticky, headerBg }) => {
 				className={`${styles.searchInput} ${sticky && styles.stickySearch} ${
 					headerBg && styles.headerBgSearchInput
 				}`}
-				placeholder='Search...'
+				placeholder='Procurar...'
 				onChange={onChange}
 				onFocus={onFocus}
 				value={query}

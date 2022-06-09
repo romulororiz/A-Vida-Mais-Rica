@@ -76,6 +76,7 @@
     margin: 0 20px;
     position: relative;
     transition: .2s ease-in-out;
+    position: relative;
 }
 
 .nav a::after {
