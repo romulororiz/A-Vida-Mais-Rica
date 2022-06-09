@@ -33,7 +33,7 @@ const HomePage = ({ articles }) => {
 								image={article.attributes.image}
 								title={article.attributes.title}
 								description={article.attributes.description}
-								hoverBtnLink={`/blog/${article.attributes.slug}`}
+								slug={`/blog/${article.attributes.slug}`}
 								category={article.attributes.category.data.attributes.name}
 								authorImage={article.attributes.author.data.attributes.image}
 								authorName={article.attributes.author.data.attributes.name}

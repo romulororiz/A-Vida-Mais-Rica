@@ -86,10 +86,10 @@ const Header = () => {
 						</ul>
 					</li>
 					<li>
-						<Link href='/about'>About</Link>
+						<Link href='/about'>Sobre</Link>
 					</li>
 					<li>
-						<Link href='/contact'>Contact</Link>
+						<Link href='/contact'>Contato</Link>
 					</li>
 				</ul>
 			</nav>

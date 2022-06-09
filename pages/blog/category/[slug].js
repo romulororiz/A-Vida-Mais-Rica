@@ -23,13 +23,13 @@ const CategoryPage = ({ category }) => {
 				<h1 className={styles.heading}>{name}</h1>
 				<div className={styles.postGrid}>
 					{articles.data.length > 0 &&
-						articles.data.map(article => (
+						articles.data.map((article, index) => (
 							<Card
 								key={article.id}
 								image={article.attributes.image}
 								title={article.attributes.title}
 								description={article.attributes.description}
-								hoverBtnLink={`/blog/${article.attributes.slug}`}
+								slug={`/blog/${article.attributes.slug}`}
 								authorImage={article.attributes.author.data.attributes.image}
 								authorName={article.attributes.author.data.attributes.name}
 								publishedAt={article.attributes.publishedAt}

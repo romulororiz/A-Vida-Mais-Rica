@@ -6,7 +6,7 @@ import NextImage from '@/components/Image';
 
 const Card = ({
 	image,
-	hoverBtnLink,
+	slug,
 	category,
 	title,
 	description,
@@ -40,39 +40,47 @@ const Card = ({
 	// }, []);
 
 	return (
-		<div className={styles.card}>
-			<div className={styles.cardHeader}>
-				<div className={styles.cardImage}>
-					<NextImage image={image} />
-				</div>
-				{hoverBtnLink ? <Link href={hoverBtnLink}>Read More</Link> : ''}
-			</div>
-			<div className={styles.cardBody}>
-				<span className={categoryStyle}>{category ? category : ''}</span>
-				<h4>{title ? title : ''}</h4>
-				{description ? (
-					<p>
-						{description.slice(0, 120)}
-						{description.length > 120 && '...'}
-					</p>
-				) : (
-					''
-				)}
-			</div>
-			<div className={styles.cardFooter}>
-				<div className={styles.user}>
-					<div className={styles.userAvatar}>
-						{authorImage ? <NextImage image={authorImage} /> : ''}
+		<Link href={slug}>
+			<div className={styles.card}>
+				<div className={styles.cardHeader}>
+					<div className={styles.cardImage}>
+						<NextImage image={image} />
 					</div>
-					<div className={styles.userInfo}>
-						<h5>{authorName ? authorName : ''}</h5>
-						<small>
-							<Moment format='D MMM[,] YYYY [at] HH:mm A'>{publishedAt}</Moment>
-						</small>
+					{slug ? <Link href={slug}>Saiba Mais</Link> : ''}
+				</div>
+				<div className={styles.cardBody}>
+					{category ? <span className={categoryStyle}>{category}</span> : ''}
+					<h4>{title ? title : ''}</h4>
+					{description ? (
+						<p>
+							{description.slice(0, 120)}
+							{description.length > 120 && '...'}
+						</p>
+					) : (
+						''
+					)}
+				</div>
+				<div className={styles.cardFooter}>
+					<div className={styles.user}>
+						{authorImage ? (
+							<div className={styles.userAvatar}>
+								<NextImage image={authorImage} />
+							</div>
+						) : (
+							''
+						)}
+						<div className={styles.userInfo}>
+							{authorName ? <h5>{authorName}</h5> : ''}
+							<small>
+								<Moment format='D MMM[,] YYYY [at] HH:mm A'>
+									{publishedAt}
+								</Moment>
+							</small>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 

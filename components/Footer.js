@@ -19,10 +19,10 @@ const Footer = () => {
 								<Link href='/'>Home</Link>
 							</li>
 							<li>
-								<Link href='/about'>About</Link>
+								<Link href='/about'>Sobre</Link>
 							</li>
 							<li>
-								<Link href='/contact'>Contact</Link>
+								<Link href='/contact'>Contato</Link>
 							</li>
 						</ul>
 					</div>
@@ -34,7 +34,7 @@ const Footer = () => {
 				</div>
 				<hr></hr>
 				<div className={styles.bottomFooter}>
-					<p>All Rights Reserverd &copy; Romulo Roriz 2022</p>
+					<p>All Rights Reserved &copy; Romulo Roriz 2022</p>
 				</div>
 			</div>
 		</div>
