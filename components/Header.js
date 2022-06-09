@@ -4,12 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Search from './Search';
 import { IoMenu, IoClose } from 'react-icons/io5';
-import {
-	FaFacebook,
-	FaTwitter,
-	FaInstagram,
-	FaChevronDown,
-} from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
 const Header = () => {
@@ -43,14 +38,14 @@ const Header = () => {
 
 	return (
 		<header
-			id='header'
-			className={`${styles.header} ${
-				stickyNav
-					? styles.stickyHeader
-					: headerWithBg
-					? styles.headerWithBg
-					: undefined
-			}`}
+			className={`${styles.header}
+			 ${
+					stickyNav
+						? styles.stickyHeader
+						: headerWithBg
+						? styles.headerWithBg
+						: undefined
+				}`}
 		>
 			<div
 				className={`${styles.logoBox} ${
@@ -74,24 +69,21 @@ const Header = () => {
 						<Link href='/'>Home</Link>
 					</li>
 					<li className={styles.dropdownNavItem}>
-						<a>Blog</a>
-						<div className={styles.dropdownContent}>
-							<Link
-								className={styles.dropdownItem}
-								href='/blog/category/nature'
-							>
-								Nature
-							</Link>
-							<Link className={styles.dropdownItem} href='/blog/category/food'>
-								Food
-							</Link>
-							<Link className={styles.dropdownItem} href='/blog/category/tech'>
-								Tech
-							</Link>
-							<Link className={styles.dropdownItem} href='/blog/category/news'>
-								News
-							</Link>
-						</div>
+						<a>Categorias</a>
+						<ul className={styles.dropdownContent}>
+							<li className={styles.dropdownItem}>
+								<Link href='/blog/category/nature'>Nature</Link>
+							</li>
+							<li className={styles.dropdownItem}>
+								<Link href='/blog/category/food'>Food</Link>
+							</li>
+							<li className={styles.dropdownItem}>
+								<Link href='/blog/category/tech'>Tech</Link>
+							</li>
+							<li className={styles.dropdownItem}>
+								<Link href='/blog/category/news'>News</Link>
+							</li>
+						</ul>
 					</li>
 					<li>
 						<Link href='/about'>About</Link>
@@ -124,8 +116,42 @@ const Header = () => {
 					<li>
 						<Link href='/'>Home</Link>
 					</li>
-					<li>
-						<Link href='#'>Blog</Link>
+					<li className={styles.dropdownNavItemMobile}>
+						<a>Blog</a>
+						{/* <ul className={styles.dropdownContentMobile}>
+							<li>
+								<Link
+									className={styles.dropdownItemMobile}
+									href='/blog/category/nature'
+								>
+									Nature
+								</Link>
+							</li>
+							<li>
+								<Link
+									className={styles.dropdownItemMobile}
+									href='/blog/category/food'
+								>
+									Food
+								</Link>
+							</li>
+							<li>
+								<Link
+									className={styles.dropdownItemMobile}
+									href='/blog/category/tech'
+								>
+									Tech
+								</Link>
+							</li>
+							<li>
+								<Link
+									className={styles.dropdownItemMobile}
+									href='/blog/category/news'
+								>
+									News
+								</Link>
+							</li>
+						</ul> */}
 					</li>
 					<li>
 						<Link href='#'>About</Link>

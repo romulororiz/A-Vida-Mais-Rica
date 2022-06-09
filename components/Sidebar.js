@@ -18,7 +18,7 @@ const Sidebar = ({ article }) => {
 				</div>
 			</div>
 			<hr />
-			<Newsletter />
+			<Newsletter heading={`Newsletter`} />
 			<hr />
 		</div>
 	);

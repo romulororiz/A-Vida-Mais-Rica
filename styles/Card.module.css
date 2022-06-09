@@ -59,26 +59,27 @@
 }
 
 .cardBody {
-  padding: 1rem;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 8px;
+  text-align: left;
 }
 
 .cardBody h4 {
-  font-size: 1.5rem;
+  font-size: 24px;
   text-transform: capitalize;
 }
 
 .cardFooter {
   display: flex;
-  padding: 1rem;
+  padding: 16px;
   margin-top: auto;
 }
 
 .user {
   display: flex;
-  gap: .5rem;
+  gap: 8px;
 }
 
 .userAvatar {
@@ -90,6 +91,9 @@
   margin-right: 5px;
 }
 
+.userInfo {
+  text-align: left;
+}
 
 .userInfo > small {
   color: #666;
@@ -107,6 +111,8 @@
 }
 
 @media (max-width: 500px) {
+  
+
   .cardBody h4 {
     font-size: 20px;
   }

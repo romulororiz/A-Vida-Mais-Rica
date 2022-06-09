@@ -1,3 +1,5 @@
+/* Newsletter - Sidebar Post Page */
+
 .newsletter {
     margin: 35px 0;
 }
@@ -24,7 +26,12 @@
     text-align: left;
 }
 
-.newsletterInputBox label {
+.newsletterInputBox h4 {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.newsletterInputBox p {
     font-size: 15px;
 }
 
@@ -72,4 +79,38 @@
 
 .newsletterInput a:hover {
     background-color: rgba(81, 81, 81, 0.95);
+}
+
+/* Newsletter - HomePage */
+.newsletterHomepage {
+    padding: 15px 0;
+    margin-bottom: 50px;
+}
+
+.headingHomepage::after {
+    content: none;
+}
+
+.newsletterInputBoxHomepage {
+    display: flex;
+}
+
+.newsletterInfoHomepage {
+    width: 55%;
+}
+
+.newsletterInfoHomepage h4 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.newsletterInfoHomepage p {
+    font-size: 15px;
+    color: #828282;
+}
+
+.newsletterInputHomepage {
+    margin-top: 20px;
+    width: 45%;
 }

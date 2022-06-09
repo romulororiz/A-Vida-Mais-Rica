@@ -3,6 +3,8 @@ import React from 'react';
 import { fetchAPI } from 'lib/api';
 import Card from '@/components/Card';
 import styles from '@/styles/CategoryPage.module.css';
+import Link from 'next/link';
+import { FaChevronLeft } from 'react-icons/fa';
 
 const CategoryPage = ({ category }) => {
 	const { name, articles } = category.attributes;
@@ -10,6 +12,14 @@ const CategoryPage = ({ category }) => {
 	return (
 		<Layout title={`${name} - A vida mais rica`}>
 			<div className={styles.categoryPage}>
+				<div className={styles.backToHome}>
+					<Link href={'/'}>
+						<a>
+							<FaChevronLeft className={styles.icon} />
+							Back to Home
+						</a>
+					</Link>
+				</div>
 				<h1 className={styles.heading}>{name}</h1>
 				<div className={styles.postGrid}>
 					{articles.data.length > 0 &&
