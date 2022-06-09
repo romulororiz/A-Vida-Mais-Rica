@@ -33,6 +33,7 @@
   display: flex;
   gap: 8px;
   padding: 5px 0;
+  margin-bottom: 10px;
 }
 
 .userAvatar {
@@ -46,6 +47,23 @@
 
 .userInfo > small {
   color: #666;
+}
+
+.postTitle {
+  margin-bottom: 20px;
+}
+
+.postTitle h1 {
+  margin-bottom: 5px;
+}
+
+.postTitle span {
+  padding: 3px 18px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(0,0,0,.85);
 }
 
 .postContent {

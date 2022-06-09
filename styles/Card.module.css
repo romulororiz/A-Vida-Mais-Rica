@@ -37,7 +37,6 @@
   animation: slideFromBottom .75s;
 }
 
-
 .cardImage {
   position: relative;
   transition: all .2s ease;
@@ -64,6 +63,17 @@
   flex-direction: column;
   gap: 8px;
   text-align: left;
+}
+
+.badgeStyle {
+  margin-top: -5px;
+  width: 125px;
+  padding: 3px 18px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(0,0,0,.85);
 }
 
 .cardBody h4 {
@@ -97,6 +107,31 @@
 
 .userInfo > small {
   color: #666;
+}
+
+/* Category Badges */
+.foodCategoryBadge, .natureCategoryBadge, .techCategoryBadge, .newsCategoryBadge, .informationCategoryBadge {
+  color: #fff;
+}
+
+.foodCategoryBadge {
+  background-color: red;
+}
+
+.natureCategoryBadge {
+  background-color: blue;
+}
+
+.techCategoryBadge {
+  background-color: green;
+}
+
+.newsCategoryBadge {
+  background-color: yellowgreen;
+}
+
+.informationCategoryBadge {
+  background-color: royalblue;
 }
 
 @keyframes slideFromBottom {

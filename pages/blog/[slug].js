@@ -10,16 +10,10 @@ import { FaChevronLeft } from 'react-icons/fa';
 import Link from 'next/link';
 
 const PostPage = ({ article }) => {
-	const {
-		title,
-		description,
-		category,
-		content,
-		image,
-		slug,
-		author,
-		publishedAt,
-	} = article.attributes;
+	const { title, description, category, content, image, author, publishedAt } =
+		article.attributes;
+
+	console.log(category);
 
 	return (
 		<Layout title={title}>
@@ -50,6 +44,7 @@ const PostPage = ({ article }) => {
 						</div>
 						<div className={styles.postTitle}>
 							<h1>{title}</h1>
+							<span>{category.data.attributes.name}</span>
 						</div>
 					</div>
 

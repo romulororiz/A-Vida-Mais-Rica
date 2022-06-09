@@ -83,8 +83,8 @@
 
 /* Newsletter - HomePage */
 .newsletterHomepage {
-    padding: 15px 0;
-    margin-bottom: 50px;
+    padding: 15px;
+    margin-bottom: 60px;
 }
 
 .headingHomepage::after {
@@ -102,6 +102,7 @@
 .newsletterInfoHomepage h4 {
     font-size: 22px;
     font-weight: 500;
+    margin-top: -8px;
     margin-bottom: 5px;
 }
 
@@ -111,6 +112,5 @@
 }
 
 .newsletterInputHomepage {
-    margin-top: 20px;
     width: 45%;
 }
