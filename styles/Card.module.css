@@ -3,7 +3,6 @@
   flex-direction: column;
   width: 100%;
   flex-wrap: wrap;
-  overflow: hidden;
   background: var(--light-color);
   transition: .2s ease-in-out;
   cursor: pointer;

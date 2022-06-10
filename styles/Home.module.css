@@ -23,11 +23,19 @@
 
 .postsGrid {
     display: grid;
+    overflow: visible;
     place-items: top;
     justify-content: center;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 10px;
     row-gap: 20px;
+    overflow:visible !important
+}
+
+.endMessage {
+    margin-top: 35px;
+    margin: 35px auto;
+    padding: 12px;
 }
 
 @media (max-width: 920px){

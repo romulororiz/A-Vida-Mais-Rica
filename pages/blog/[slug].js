@@ -13,8 +13,6 @@ const PostPage = ({ article }) => {
 	const { title, description, category, content, image, author, publishedAt } =
 		article.attributes;
 
-	console.log(category);
-
 	return (
 		<Layout title={title}>
 			{/* Title and Author section */}
