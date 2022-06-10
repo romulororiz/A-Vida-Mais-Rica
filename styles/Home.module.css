@@ -34,7 +34,7 @@
 
 .endMessage {
     margin-top: 35px;
-    margin: 35px auto;
+    margin: 55px auto -20px auto;
     padding: 12px;
 }
 
@@ -47,6 +47,10 @@
 @media (max-width: 500px) {
     .heading {
         width: 250px;
+    }
+
+    .endMessage {
+        font-size: 14px;
     }
 
     .heading span {

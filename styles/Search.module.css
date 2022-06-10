@@ -102,8 +102,6 @@
     padding: 0;
     position: absolute;
     top: 100%;
-    border-radius: 6px;
-
 }
 
 @media (max-width: 920px) {

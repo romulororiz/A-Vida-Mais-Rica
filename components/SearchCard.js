@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const SearchCard = ({ result }) => {
 	const { title, image, category, author, slug } = result.attributes;
-	const slicedTitle = title.slice(0, 20);
+	const slicedTitle = title.slice(0, 25);
 
 	return (
 		<Link href={`/blog/${slug}`}>

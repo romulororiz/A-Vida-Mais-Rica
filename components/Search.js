@@ -85,12 +85,9 @@ const Search = ({ sticky, headerBg }) => {
 
 			{data && active && (
 				<ul className={styles.searchResults}>
-					{data
-						.slice(0, 5)
-						.sort()
-						.map((result, index) => (
-							<SearchCard key={index} result={result} />
-						))}
+					{data.slice(0, 5).map((result, index) => (
+						<SearchCard key={index} result={result} />
+					))}
 				</ul>
 			)}
 		</div>

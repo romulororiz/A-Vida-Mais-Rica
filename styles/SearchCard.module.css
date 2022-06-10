@@ -1,14 +1,13 @@
 .card {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    width: 100%;
+    grid-template-columns: 1.2fr .5fr;
+    width: 90%;
     background: rgb(0, 0, 0);
-    margin-bottom: 3px;
     cursor: pointer;
-    border-radius: 2px;
     position: relative;
     z-index: 999;
     transition: .2s ease-in-out;
+    margin-left: 50px;
 }
 
 .card:hover {
@@ -24,27 +23,25 @@
 }
 
 .cardInfo h2 {
-    width: 90%;
-    margin-bottom: -20px;
+    margin-bottom: -10px;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
 }
 
 .catAndAuthor {
     display: flex;
-    justify-content: flex-start;
-    width: 100%;
-
 }
 
-.cardInfo p, .cardInfo span {
-    font-size: 16px;
+.catAndAuthor p, .catAndAuthor span {
+    font-size: 12px;
     color: #fff;
     font-weight: 300;
-    margin-left: 5px;
 }
 
+.catAndAuthor span, .catAndAuthor p:last-child {
+    margin-left: 5px;
+}
 
 .cardImage {
     padding: 8px;
