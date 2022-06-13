@@ -12,6 +12,7 @@ const HomePage = ({ articles, meta }) => {
 	const [isHomepage, setIsHomepage] = useState(false);
 	const [allArticles, setAllArticles] = useState(articles);
 	const [hasMore, setHasMore] = useState(true);
+	const [isLoading, setIsLoading] = useState(true);
 
 	// Self explanatory - Get value for when on Homepage
 	const router = useRouter();
@@ -23,13 +24,20 @@ const HomePage = ({ articles, meta }) => {
 
 	// Infinite Scroll handler - Get next articles
 	const getNextArticles = async () => {
-		// Loading starts on article 5 and loads 4 more each time after that
-		const res = await fetch(
-			`${API_URL}/api/articles?pagination[start]=${allArticles.length}&pagination[limit]=4&populate=*`
-		);
-		const { data } = await res.json();
+		setIsLoading(true);
+		try {
+			// Loading starts on article 5 and loads 4 more each time after that
+			const res = await fetch(
+				`${API_URL}/api/articles?pagination[start]=${allArticles.length}&pagination[limit]=2&sort[0]=publishedAt%3Adesc&populate=*`
+			);
+			const { data } = await res.json();
 
-		setAllArticles([...allArticles, ...data]);
+			setAllArticles([...allArticles, ...data]);
+
+			setIsLoading(false);
+		} catch (error) {
+			console.error(`Error: ${error}`);
+		}
 	};
 
 	useEffect(() => {
@@ -48,7 +56,6 @@ const HomePage = ({ articles, meta }) => {
 					className={styles.postsGrid}
 					dataLength={allArticles.length}
 					next={getNextArticles}
-					loader={<h4>Loading...</h4>}
 					hasMore={hasMore}
 				>
 					{allArticles &&
@@ -66,6 +73,7 @@ const HomePage = ({ articles, meta }) => {
 							/>
 						))}
 				</InfiniteScroll>
+				{isLoading && <h4 className={styles.loadingMessage}>Loading...</h4>}
 				{!hasMore && <p className={styles.endMessage}>Você chegou ao fim</p>}
 			</div>
 		</Layout>
@@ -76,8 +84,9 @@ export async function getStaticProps() {
 	const articlesRes = await fetchAPI('/articles', {
 		populate: ['image', 'category', 'author', 'author.image'],
 		pagination: {
-			pageSize: 4,
+			limit: 2,
 		},
+		sort: ['publishedAt:desc'],
 	});
 
 	const articles = articlesRes;

@@ -22,7 +22,7 @@ const CategoryPage = ({ category }) => {
 				</div>
 				<h1 className={styles.heading}>{name}</h1>
 				<div className={styles.postsGrid}>
-					{articles.data.length > 0 &&
+					{articles.data &&
 						articles.data.map(article => (
 							<Card
 								key={article.id}

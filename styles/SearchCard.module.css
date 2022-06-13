@@ -1,18 +1,18 @@
 .card {
     display: grid;
     grid-template-columns: 1.2fr .5fr;
-    width: 90%;
+    width: 100%;
     background: rgb(0, 0, 0);
     cursor: pointer;
     position: relative;
     z-index: 999;
     transition: .2s ease-in-out;
     margin-left: 50px;
+    margin: 0 auto;
 }
 
 .card:hover {
     background-color: rgba(59, 59, 59, 0.95);
-    box-shadow: 0px 17px 12px -7px rgba(0, 0, 0, 0.804);
 }
 
 .cardInfo {
