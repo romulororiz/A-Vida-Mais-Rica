@@ -89,12 +89,10 @@ export async function getStaticProps() {
 		sort: ['publishedAt:desc'],
 	});
 
-	const articles = articlesRes;
-
 	return {
 		props: {
-			articles: articles.data,
-			meta: articles.meta,
+			articles: articlesRes.data,
+			meta: articlesRes.meta,
 		},
 		revalidate: 1,
 	};
