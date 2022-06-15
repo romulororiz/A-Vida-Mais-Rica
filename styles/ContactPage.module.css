@@ -1,0 +1,105 @@
+.contactPage {
+    display: flex;
+    width: 100%;
+    margin: 100px auto !important;
+    place-content: center;
+}
+
+.contactPageDetails {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    width: 55%;
+    margin-right: 25px;
+}
+
+/* Form */
+.contactForm {
+    width: 35%;
+}
+
+.formControl {
+	margin: 35px 0;
+    position: relative;
+}
+
+.formControl label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .5;
+    transition: all .2s ease;
+    pointer-events: none;
+}
+
+.contactForm input[type='text'],
+.contactForm input[type='email'],
+.contactForm input[type='number'] {
+	border: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+	width: 100%;
+    height: 35px;
+	padding: 3px 12px;
+	font-size: 16px;
+    background-color: transparent;
+}
+
+.contactForm textarea {
+    border: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+	width: 100%;
+	padding: 10px 12px;
+	font-size: 16px;
+    resize: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.contactForm input[type='text']:focus,
+.contactForm input[type='email']:focus,
+.contactForm input[type='number']:focus,
+.contactForm textarea:focus {
+    outline: none;
+    overflow: auto;
+}
+
+.contactForm input[type='number']::-webkit-outer-spin-button,
+.contactForm input[type='number']::-webkit-inner-spin-button  {
+    -webkit-appearance: none;
+}
+
+
+.contactForm input[type='text']:focus + label,
+.contactForm input[type='email']:focus + label,
+.contactForm input[type='number']:focus + label,
+.contactForm textarea:focus + label {
+    opacity: 1;
+    transform: scale(0.75) translateY(-100%) translateX(-30px);
+    font-weight: 500;
+}
+
+.contactForm input[type='submit'] {
+    border: none;
+    outline: none;
+    background-color: #000;
+    color: #fff;
+    display: block;
+    width: 30%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s ease;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.contactForm input[type='submit']:hover {
+    background-color: rgba(79, 78, 78, 0.95);
+    transform: scale(1.025);
+    box-shadow: 4px 9px 15px -5px rgba(0,0,0,0.1);
+}
+
+.contactForm input[type='submit']:active {
+    transform: scale(.95);
+}

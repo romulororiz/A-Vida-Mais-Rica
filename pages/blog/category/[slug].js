@@ -1,13 +1,25 @@
 import Layout from '@/components/Layout';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchAPI } from 'lib/api';
 import Card from '@/components/Card';
 import styles from '@/styles/CategoryPage.module.css';
 import Link from 'next/link';
 import { FaChevronLeft } from 'react-icons/fa';
+import Newsletter from '@/components/Newsletter';
+import { useRouter } from 'next/router';
 
 const CategoryPage = ({ category }) => {
-	const { name, articles } = category.attributes;
+	const [fullWidthNewsletter, setFullWidthNewsletter] = useState(false);
+
+	const { name, articles, slug } = category.attributes;
+
+	const router = useRouter();
+	console.log(router);
+	useEffect(() => {
+		if (router.pathname === `/blog/category/[slug]`) {
+			setFullWidthNewsletter(true);
+		}
+	});
 
 	return (
 		<Layout title={`${name} - A vida mais rica`}>
@@ -36,6 +48,11 @@ const CategoryPage = ({ category }) => {
 							/>
 						))}
 				</div>
+				<Newsletter
+					title={`Receba seu e-book gratuito`}
+					lead={`Nos informe seu email para que possamos enviar seu e-book gratuito. Fique tranquilo, seu e-mail esta completamente seguro conosco.`}
+					fullWidth={fullWidthNewsletter}
+				/>
 			</div>
 		</Layout>
 	);

@@ -1,24 +1,26 @@
 import React from 'react';
 import styles from '@/styles/Newsletter.module.css';
 
-const Newsletter = ({ heading, title, lead, homepage }) => {
+const Newsletter = ({ heading, title, lead, fullWidth }) => {
 	return (
 		<div
 			className={`${styles.newsletter} ${
-				homepage && styles.newsletterHomepage
+				fullWidth && styles.newsletterfullWidth
 			}`}
 		>
-			<h3 className={`${styles.heading} ${homepage && styles.headingHomepage}`}>
+			<h3
+				className={`${styles.heading} ${fullWidth && styles.headingfullWidth}`}
+			>
 				{heading ? heading : ''}
 			</h3>
 			<div
 				className={`${styles.newsletterInputBox} ${
-					homepage && styles.newsletterInputBoxHomepage
+					fullWidth && styles.newsletterInputBoxfullWidth
 				}`}
 			>
 				<div
 					className={`${styles.newsletterInfo} ${
-						homepage && styles.newsletterInfoHomepage
+						fullWidth && styles.newsletterInfofullWidth
 					}`}
 				>
 					<h4>{title ? title : ''}</h4>
@@ -26,7 +28,7 @@ const Newsletter = ({ heading, title, lead, homepage }) => {
 				</div>
 				<div
 					className={`${styles.newsletterInput} ${
-						homepage && styles.newsletterInputHomepage
+						fullWidth && styles.newsletterInputfullWidth
 					}`}
 				>
 					<input

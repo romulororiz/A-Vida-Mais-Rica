@@ -6,7 +6,6 @@ import styles from '@/styles/RelatedPosts.module.css';
 
 const RelatedPosts = ({ article }) => {
 	const [articles, setArticles] = useState([]);
-	const [error, setError] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);
 
 	// Get slug parameter

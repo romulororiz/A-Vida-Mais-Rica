@@ -105,7 +105,7 @@
     box-shadow: 0px 17px 12px -7px rgba(0, 0, 0, 0.804);
 }
 
-@media (max-width: 920px) {
+@media (max-width: 945px) {
     .searchBox {
         /* Fix Search Bar showing only on menuMobile when responsive */
         display: none;

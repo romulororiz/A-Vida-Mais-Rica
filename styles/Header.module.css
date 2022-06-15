@@ -16,7 +16,6 @@
 
 .stickyNavItems a {
     margin: 0 8px !important;
-    font-size: 10px !important;
 }
 
 /* Header */
@@ -72,7 +71,7 @@
 
 .nav a{
     color: #fff;
-    padding: 6px 5px;
+    padding: 12px 5px;
     margin: 0 20px;
     position: relative;
     transition: .2s ease-in-out;
@@ -121,18 +120,17 @@
 
 .dropdownContent {
     position: absolute;
-    top: 110%;
+    top: 140%;
     right: 0;
     min-width: 180px;
     opacity: 0;
     visibility: hidden;
     box-shadow: 0px 17px 12px -7px rgba(0, 0, 0, 0.376);
     transform: translateY(-10px);
-    transition: opacity .15s ease-in-out, transform .15s ease-in-out;
+    transition: opacity .35s ease-in-out, transform 2s ease-in-out;
     background-color: #000;
     flex-direction: column;
     pointer-events: none;
-    display: inline-block;
     border-radius: 2px;
 }
 
@@ -140,16 +138,16 @@
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    display: flex;
     transform: translateY(0);
 }
 
 .dropdownItem {
+    white-space: nowrap;
     font-size: 12px;
     text-align: center;
     width: 100%;
     display: flex;
-    padding: 12px 0;
+    padding: 6px 0 !important;
     transition: .2s ease-in-out;
 }
 
@@ -166,7 +164,7 @@
 }
 
 /* Mobile Nav */
-@media (max-width: 920px) {
+@media (max-width: 945px) {
 .header {
     padding: 0 30px;
 }

@@ -9,7 +9,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import styles from '@/styles/Home.module.css';
 
 const HomePage = ({ articles, meta }) => {
-	const [isHomepage, setIsHomepage] = useState(false);
+	const [fullWidthNewsletter, setFullWidthNewsletter] = useState(false);
 	const [allArticles, setAllArticles] = useState(articles);
 	const [hasMore, setHasMore] = useState(true);
 	const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +18,7 @@ const HomePage = ({ articles, meta }) => {
 	const router = useRouter();
 	useEffect(() => {
 		if (router.pathname === '/') {
-			setIsHomepage(true);
+			setFullWidthNewsletter(true);
 		}
 	});
 
@@ -50,7 +50,7 @@ const HomePage = ({ articles, meta }) => {
 				<Newsletter
 					title={`Receba seu e-book gratuito`}
 					lead={`Nos informe seu email para que possamos enviar seu e-book gratuito. Fique tranquilo, seu e-mail esta completamente seguro conosco.`}
-					homepage={isHomepage}
+					fullWidth={fullWidthNewsletter}
 				/>
 				<InfiniteScroll
 					className={styles.postsGrid}
