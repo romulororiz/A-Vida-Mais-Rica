@@ -1,16 +1,28 @@
 .contactPage {
     display: flex;
     width: 100%;
-    margin: 100px auto !important;
+    margin: 40px auto 100px auto;
     place-content: center;
 }
 
 .contactPageDetails {
     display: flex;
     flex-direction: column;
-    place-content: center;
+    justify-content: center;
     width: 55%;
     margin-right: 25px;
+}
+
+.contactInfo {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80px;
+}
+
+.contactInfoItem span {
+    margin-right: 8px;
 }
 
 /* Form */
@@ -48,7 +60,7 @@
     border: 0;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 	width: 100%;
-	padding: 10px 12px;
+	padding: 15px 12px;
 	font-size: 16px;
     resize: none;
     background-color: transparent;
@@ -73,7 +85,11 @@
 .contactForm input[type='text']:focus + label,
 .contactForm input[type='email']:focus + label,
 .contactForm input[type='number']:focus + label,
-.contactForm textarea:focus + label {
+.contactForm textarea:focus + label,
+.contactForm input[type='text']:valid + label,
+.contactForm input[type='email']:valid > label,
+.contactForm input[type='number']:valid + label,
+.contactForm textarea:valid + label {
     opacity: 1;
     transform: scale(0.75) translateY(-100%) translateX(-30px);
     font-weight: 500;
@@ -102,4 +118,13 @@
 
 .contactForm input[type='submit']:active {
     transform: scale(.95);
+}
+
+.messageSent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: 373px;
+    place-content: center;
+    place-items: center;
 }
