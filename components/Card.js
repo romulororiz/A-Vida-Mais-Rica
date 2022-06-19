@@ -49,7 +49,16 @@ const Card = ({
 					{slug ? <Link href={slug}>Saiba Mais</Link> : ''}
 				</div>
 				<div className={styles.cardBody}>
-					{category ? <span className={categoryStyle}>{category}</span> : ''}
+					{category ? (
+						<Link
+							className={categoryStyle}
+							href={`/blog/category/${category.slug}`}
+						>
+							{category.name}
+						</Link>
+					) : (
+						''
+					)}
 					<h4>{title ? title : ''}</h4>
 					{description ? (
 						<p>

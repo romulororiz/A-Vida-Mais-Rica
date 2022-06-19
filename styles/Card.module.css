@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   background: var(--light-color);
   transition: .2s ease-in-out;
-  cursor: pointer;
 }
 
 .cardHeader {
@@ -38,6 +37,7 @@
 .cardImage {
   position: relative;
   transition: all .2s ease;
+  cursor: pointer;
 }
 
 .cardImage::after {
@@ -61,6 +61,18 @@
   flex-direction: column;
   gap: 8px;
   text-align: left;
+}
+
+.cardBody a {
+  width: 30%;
+  padding: 3px 18px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(0,0,0,.85);
+  animation: none !important;
+  cursor: pointer;
 }
 
 .badgeStyle {

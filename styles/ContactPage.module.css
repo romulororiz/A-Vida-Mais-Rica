@@ -13,6 +13,14 @@
     margin-right: 25px;
 }
 
+.heading {
+    margin-bottom: 12px;
+}
+
+.lead {
+    margin-bottom: 20px;
+}
+
 .contactInfo {
     margin-top: 15px;
     display: flex;
@@ -21,13 +29,32 @@
     height: 80px;
 }
 
-.contactInfoItem span {
-    margin-right: 8px;
+.icon {
+    margin-right: 3px;
+    font-size: 20px;
+    color: #333;
+    position: relative;
+    top: 3px;
+}
+
+.whatsapp {
+    color: #21b657;
+}
+
+.email {
+    color: #148eeb;
 }
 
 /* Form */
 .contactForm {
     width: 35%;
+}
+
+.contactForm input:-webkit-autofill,
+.contactForm input:-webkit-autofill:hover, 
+.contactForm input:-webkit-autofill:focus, 
+.contactForm input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #f5f2f2 inset !important;
 }
 
 .formControl {
@@ -54,6 +81,8 @@
 	padding: 3px 12px;
 	font-size: 16px;
     background-color: transparent;
+    transition: all .4s ease;
+    -webkit-appearance: none;
 }
 
 .contactForm textarea {
@@ -66,6 +95,8 @@
     background-color: transparent;
     font-family: inherit;
     font-size: inherit;
+    transition: all .4s ease;
+    -webkit-appearance: none;
 }
 
 .contactForm input[type='text']:focus,
@@ -74,6 +105,7 @@
 .contactForm textarea:focus {
     outline: none;
     overflow: auto;
+	border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 .contactForm input[type='number']::-webkit-outer-spin-button,
@@ -87,12 +119,25 @@
 .contactForm input[type='number']:focus + label,
 .contactForm textarea:focus + label,
 .contactForm input[type='text']:valid + label,
-.contactForm input[type='email']:valid > label,
+.contactForm input[type='email']:valid + label,
+.contactForm input[type='email']:invalid + label,
 .contactForm input[type='number']:valid + label,
 .contactForm textarea:valid + label {
     opacity: 1;
-    transform: scale(0.75) translateY(-100%) translateX(-30px);
+    transform: scale(0.75) translateY(-120%) translateX(-30px);
     font-weight: 500;
+}
+
+.contactForm input[type='email'][value=''] + label {
+    opacity: .5;
+    transform: none !important;
+    font-weight: 400 !important;
+}
+
+.contactForm input[type='email'][value='']:focus + label {
+    opacity: 1 !important;
+    transform: scale(0.75) translateY(-120%) translateX(-30px) !important;
+    font-weight: 500 !important;
 }
 
 .contactForm input[type='submit'] {
@@ -108,6 +153,7 @@
     transition: all .2s ease;
     font-size: 12px;
     text-transform: uppercase;
+    -webkit-appearance: none;
 }
 
 .contactForm input[type='submit']:hover {
@@ -127,4 +173,61 @@
     margin-bottom: 373px;
     place-content: center;
     place-items: center;
+}
+
+@media (max-width: 920px) {
+    .contactPage {
+        flex-direction: column;
+    }
+    
+    .contactPageDetails {
+        text-align: left;
+    }
+
+    .heading {
+        margin: 12px 0;
+    }
+
+    .contactInfo {
+        width: 100%;
+        text-align: left;
+        margin: 20px auto;
+    }
+
+    .contactPageDetails, .contactForm {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .messageSent {
+        margin: 50px 0;
+    }
+}
+ 
+@media (max-width: 500px) {
+    .contactPageDetails {
+        text-align: center;
+    }
+    
+    .heading {
+        font-size: 22px;
+    }
+
+    .lead {
+        font-size: 14px;
+    }
+
+    .contactInfo {
+        width: 260px;
+        font-size: 14px;
+    }
+    
+    .contactForm input[type='submit'] {
+        display: block;
+        width: 100%;
+    }
+
+    .messageSent {
+        font-size: 14px;
+    }
 }

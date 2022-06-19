@@ -1,9 +1,8 @@
 import Layout from '@/components/Layout';
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '@/styles/ContactPage.module.css';
-import { FaPhoneAlt, FaAt } from 'react-icons/fa';
-import { useState } from 'react';
-import { fetchAPI } from 'lib/api';
+import { FaWhatsapp, FaAt } from 'react-icons/fa';
+import { FiAtSign } from 'react-icons/fi';
 import axios from 'axios';
 
 const Contact = () => {
@@ -49,7 +48,7 @@ const Contact = () => {
 			<div className={styles.contactPage}>
 				<div className={styles.contactPageDetails}>
 					<h1 className={styles.heading}>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Lorem ipsum dolor sit amet consectetur adipisicing.
 					</h1>
 					<p className={styles.lead}>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
@@ -58,14 +57,17 @@ const Contact = () => {
 					</p>
 					<ul className={styles.contactInfo}>
 						<li className={styles.contactInfoItem}>
-							<span>
-								<FaPhoneAlt className={styles.icon} />
-							</span>{' '}
+							<a
+								href={`https://wa.me/410782252997?text=Quero+tornar+a+minha+Vida+%2B+Rica%21`}
+								target='_blank'
+							>
+								<FaWhatsapp className={`${styles.icon} ${styles.whatsapp}`} />
+							</a>{' '}
 							+41 123 456 789
 						</li>
 						<li className={styles.contactInfoItem}>
 							<span>
-								<FaAt className={styles.icon} />
+								<FiAtSign className={`${styles.icon} ${styles.email}`} />
 							</span>{' '}
 							gregoryroriz@avidamaisrica.com
 						</li>

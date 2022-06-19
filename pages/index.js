@@ -66,7 +66,7 @@ const HomePage = ({ articles, meta }) => {
 								title={article.attributes.title}
 								description={article.attributes.description}
 								slug={`/blog/${article.attributes.slug}`}
-								category={article.attributes.category.data.attributes.name}
+								category={article.attributes.category.data.attributes}
 								authorImage={article.attributes.author.data.attributes.image}
 								authorName={article.attributes.author.data.attributes.name}
 								publishedAt={article.attributes.publishedAt}

@@ -57,7 +57,7 @@
   margin-bottom: 5px;
 }
 
-.postTitle span {
+.postTitle a {
   padding: 3px 18px;
   text-align: center;
   border-radius: 4px;

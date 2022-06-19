@@ -18,10 +18,7 @@ const About = ({ author }) => {
 					</div>
 					<div className={styles.authorInfo}>
 						<h2 className={styles.name}>{name}</h2>
-						<h4 className={styles.title}>
-							Fundador do site A Vida Mais Rica
-							<span style={{ fontSize: 20 }}>💰</span>
-						</h4>
+						<h4 className={styles.title}>Fundador do site A Vida Mais Rica</h4>
 						<div className={styles.content}>
 							<MarkdownView markdown={about} />
 						</div>
