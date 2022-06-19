@@ -17,27 +17,27 @@ const Card = ({
 	const [categoryStyle, setCategoryStyle] = useState(`${styles.badgeStyle}`);
 
 	// Change category badge style depending on category name
-	// useEffect(() => {
-	// 	switch (category) {
-	// 		case 'Food':
-	// 			setCategoryStyle(`${styles.foodCategoryBadge}`);
-	// 			break;
-	// 		case 'Nature':
-	// 			setCategoryStyle(`${styles.natureCategoryBadge}`);
-	// 			break;
-	// 		case 'Tech':
-	// 			setCategoryStyle(`${styles.techCategoryBadge}`);
-	// 			break;
-	// 		case 'News':
-	// 			setCategoryStyle(`${styles.newsCategoryBadge}`);
-	// 			break;
-	// 		case 'Information':
-	// 			setCategoryStyle(`${styles.informationCategoryBadge}`);
-	// 			break;
-	// 		default:
-	// 			break;
-	// 	}
-	// }, []);
+	useEffect(() => {
+		switch (category.slug) {
+			case 'investimentos':
+				setCategoryStyle(
+					`${styles.InvestimentosCategoryBadge} ${styles.badgeStyle}`
+				);
+				break;
+			case 'financas-pessoais':
+				setCategoryStyle(
+					`${styles.financasCategoryBadge} ${styles.badgeStyle}`
+				);
+				break;
+			case 'empreender':
+				setCategoryStyle(
+					`${styles.empreenderCategoryBadge} ${styles.badgeStyle}`
+				);
+				break;
+			default:
+				break;
+		}
+	}, []);
 
 	return (
 		<Link href={slug}>
@@ -48,18 +48,16 @@ const Card = ({
 					</div>
 					{slug ? <Link href={slug}>Saiba Mais</Link> : ''}
 				</div>
+
 				<div className={styles.cardBody}>
-					{category ? (
-						<Link
-							className={categoryStyle}
-							href={`/blog/category/${category.slug}`}
-						>
-							{category.name}
+					<div className={categoryStyle}>
+						<Link href={`/blog/category/${category.slug}`}>
+							<a>{category.name}</a>
 						</Link>
-					) : (
-						''
-					)}
+					</div>
+
 					<h4>{title ? title : ''}</h4>
+
 					{description ? (
 						<p>
 							{description.slice(0, 120)}
@@ -69,6 +67,7 @@ const Card = ({
 						''
 					)}
 				</div>
+
 				<div className={styles.cardFooter}>
 					<div className={styles.user}>
 						{authorImage ? (

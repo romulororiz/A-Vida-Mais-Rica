@@ -11,14 +11,14 @@ import { useRouter } from 'next/router';
 const CategoryPage = ({ category }) => {
 	const [fullWidthNewsletter, setFullWidthNewsletter] = useState(false);
 
-	const { name, articles, slug } = category.attributes;
+	const { name, articles } = category.attributes;
 
 	const router = useRouter();
 	useEffect(() => {
 		if (router.pathname === `/blog/category/[slug]`) {
 			setFullWidthNewsletter(true);
 		}
-	});
+	}, []);
 
 	return (
 		<Layout title={`${name} - A vida mais rica`}>
@@ -41,6 +41,7 @@ const CategoryPage = ({ category }) => {
 								title={article.attributes.title}
 								description={article.attributes.description}
 								slug={`/blog/${article.attributes.slug}`}
+								category={category.attributes}
 								authorImage={article.attributes.author.data.attributes.image}
 								authorName={article.attributes.author.data.attributes.name}
 								publishedAt={article.attributes.publishedAt}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import RelatedPosts from './RelatedPosts';
 import Newsletter from './Newsletter';
 import styles from '@/styles/Sidebar.module.css';

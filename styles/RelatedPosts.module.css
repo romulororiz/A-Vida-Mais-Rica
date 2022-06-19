@@ -43,7 +43,8 @@
     .relatedPosts {
         grid-template-columns: none;
         grid-template-rows: repeat(3, 1fr);
-        margin-top: 20px;
+        margin: 20px auto 0 auto;
+        width: 75%;
     }
 
 }

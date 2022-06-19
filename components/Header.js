@@ -72,16 +72,15 @@ const Header = () => {
 						<a>Categorias</a>
 						<ul className={styles.dropdownContent}>
 							<li className={styles.dropdownItem}>
-								<Link href='/blog/category/nature'>Nature</Link>
+								<Link href='/blog/category/investimentos'>Investimentos</Link>
 							</li>
 							<li className={styles.dropdownItem}>
-								<Link href='/blog/category/food'>Food</Link>
+								<Link href='/blog/category/financas-pessoais'>
+									Finanças Pessoais
+								</Link>
 							</li>
 							<li className={styles.dropdownItem}>
-								<Link href='/blog/category/tech'>Tech</Link>
-							</li>
-							<li className={styles.dropdownItem}>
-								<Link href='/blog/category/news'>News</Link>
+								<Link href='/blog/category/empreender'>Empreender</Link>
 							</li>
 						</ul>
 					</li>

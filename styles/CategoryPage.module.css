@@ -1,5 +1,5 @@
 .categoryPage {
-    margin-bottom: 100px;
+    margin: 0 auto 100px auto;
 }
 
 .categoryPage h1 {
@@ -13,7 +13,7 @@
     bottom: 0;
     left: 0;
     height: 2px;
-    width: 250px;
+    width: 320px;
     background-color: #000;
 
 }

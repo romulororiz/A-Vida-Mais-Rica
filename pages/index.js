@@ -20,7 +20,7 @@ const HomePage = ({ articles, meta }) => {
 		if (router.pathname === '/') {
 			setFullWidthNewsletter(true);
 		}
-	});
+	}, []);
 
 	// Infinite Scroll handler - Get next articles
 	const getNextArticles = async () => {
