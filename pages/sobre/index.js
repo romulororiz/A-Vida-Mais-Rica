@@ -10,7 +10,7 @@ const About = ({ author }) => {
 	const { name, image, about } = author[0].attributes;
 
 	return (
-		<Layout>
+		<Layout title='Sobre mim | A Vida + Rica'>
 			<div className={styles.aboutPage}>
 				<div className={styles.card}>
 					<div className={styles.authorImage}>

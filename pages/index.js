@@ -27,10 +27,17 @@ const HomePage = ({ articles, meta }) => {
 		setIsLoading(true);
 		try {
 			// Loading starts on article 5 and loads 4 more each time after that
-			const res = await fetch(
-				`${API_URL}/api/articles?pagination[start]=${allArticles.length}&pagination[limit]=2&sort[0]=publishedAt%3Adesc&populate=*`
-			);
-			const { data } = await res.json();
+			const res = await fetchAPI('/articles', {
+				populate: ['image', 'category', 'author', 'author.image'],
+				pagination: {
+					limit: 2,
+					start: allArticles.length,
+				},
+				sort: ['publishedAt:desc'],
+			});
+			const { data } = res;
+
+			console.log(data);
 
 			setAllArticles([...allArticles, ...data]);
 

@@ -44,7 +44,7 @@ const Contact = () => {
 	};
 
 	return (
-		<Layout>
+		<Layout title='Contato | A Vida + Rica'>
 			<div className={styles.contactPage}>
 				<div className={styles.contactPageDetails}>
 					<h1 className={styles.heading}>

@@ -1,27 +1,33 @@
 import React from 'react';
 import styles from '@/styles/Showcase.module.css';
+import Link from 'next/link';
 
 const Showcase = () => {
 	return (
 		<div className={styles.showcase}>
 			<div className={styles.container}>
 				<div className={styles.textBox}>
-					<h1 className={styles.topHeading}>Comece sua jornada</h1>
-					<h3 className={styles.subHeading}>rumo a uma vida mais rica</h3>
+					<h3 className={styles.topHeading}>Comece sua jornada</h3>
+					<h1 className={styles.subHeading}>rumo à uma vida mais rica</h1>
 					<p className={styles.lead}>
-						Tempo, saude e riqueza são os três pilares no qual esse blog se
-						sustenta.
-					</p>
-
-					<p className={styles.lead}>
-						Vou te mostrar como é possível usar o tempo ao seu favor para ter
-						mais saúde e dinheiro.
+						Nós do A Vida + Rica temos como objetivo{' '}
+						<span>TORNAR A SUA VIDA + RICA!</span>
 					</p>
 					<p className={styles.lead}>
-						Se voce gostou da idea venha comigo que vou te mostrar o caminho das
-						pedras…
+						Através de uma linguagem simples e descomplicada, vamos te
+						acompanhar numa jornada rumo a uma Vida + Rica.
+					</p>
+					<p className={styles.lead}>
+						Aqui vamos fazer você refletir e lhe dar as ferramentas necessárias
+						para que você não dependa, pura e simplesmente, da orientação de
+						outras pessoas.
 					</p>
 				</div>
+				<Link href={`/sobre`}>
+					<a>
+						Saiba Mais <span>&rarr;</span>
+					</a>
+				</Link>
 			</div>
 		</div>
 	);

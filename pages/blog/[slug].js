@@ -1,6 +1,5 @@
 import Layout from '@/components/Layout';
 import React from 'react';
-import styles from '@/styles/PostPage.module.css';
 import { fetchAPI } from 'lib/api';
 import NextImage from '@/components/Image';
 import Moment from 'react-moment';
@@ -8,13 +7,14 @@ import Sidebar from '@/components/Sidebar';
 import MarkdownView from 'react-showdown';
 import { FaChevronLeft } from 'react-icons/fa';
 import Link from 'next/link';
+import styles from '@/styles/PostPage.module.css';
 
 const PostPage = ({ article }) => {
 	const { title, description, category, content, image, author, publishedAt } =
 		article.attributes;
 
 	return (
-		<Layout title={title}>
+		<Layout title={`${title} | A Vida + Rica`}>
 			{/* Title and Author section */}
 			<div className={styles.postPage}>
 				<div>
@@ -23,7 +23,7 @@ const PostPage = ({ article }) => {
 							<Link href={'/'}>
 								<a>
 									<FaChevronLeft className={styles.icon} />
-									Back to Home
+									Voltar
 								</a>
 							</Link>
 						</div>
@@ -56,40 +56,7 @@ const PostPage = ({ article }) => {
 
 					{/* Post Content */}
 					<div className={styles.postContent}>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-						sint, amet voluptate itaque dolorum aperiam voluptates eos,
-						aspernatur facilis odio cupiditate! Reiciendis corporis, quos
-						perspiciatis reprehenderit blanditiis cupiditate voluptatibus nemo
-						voluptatem consectetur natus, aliquid odio expedita quia, dolorum
-						saepe ducimus excepturi. Exercitationem quisquam fuga, voluptatem
-						dolore unde cupiditate debitis dolorem, possimus ab, dignissimos ad
-						ipsum? Qui repellat vero dolorem dolor eum quod quia est soluta ut
-						nesciunt praesentium iste ad explicabo, expedita deleniti
-						dignissimos magnam iusto doloremque tempora nostrum facere! Officiis
-						perferendis rem sit inventore hic asperiores architecto voluptatum
-						nostrum animi! Magni numquam delectus eos veniam cum, minima
-						deserunt nisi debitis, in accusamus animi quae natus dolorem dolore
-						ullam perspiciatis voluptates unde labore laudantium vero suscipit.
-						Asperiores laboriosam excepturi quod atque aut fugiat quaerat nam
-						debitis repellat maiores libero dolorum quos veritatis officia id,
-						error animi quo sint nisi, rem maxime? Veniam delectus eum facere ab
-						maxime, illo laborum asperiores dolorem quam quas quasi at iusto
-						fuga neque vitae quidem, similique distinctio sit minus consequatur
-						quisquam autem. Aliquam modi ipsa, iste, doloremque qui sunt nobis
-						accusamus, ipsum asperiores tempore autem repudiandae? Officiis
-						cumque eius impedit alias ad, sequi voluptatum, atque dolore qui,
-						doloribus illo ex quasi voluptatibus ut eveniet rem ipsa possimus?
-						Minima sequi saepe excepturi quisquam, officia veniam. Natus labore
-						ex ipsam harum quidem rerum dolor? Incidunt blanditiis et repellat
-						accusantium, amet tempora quia architecto. Qui fugiat delectus iure
-						asperiores repellat, sed dolore impedit magnam deleniti ratione
-						ullam nam nesciunt velit tempore, eius, ut commodi quia officiis
-						laboriosam? Aliquid non rem tempora dolore. Voluptates ab doloribus
-						consequatur repellat odit ullam corrupti sunt commodi, eius animi
-						maiores harum dignissimos nam beatae quidem placeat, vero quo
-						provident quae sit nihil! Accusamus ratione reiciendis quod facere.
-						Voluptatem accusantium omnis praesentium, tempora itaque temporibus
-						sapiente aliquid assumenda error dolores id, culpa aperiam earum.
+						<MarkdownView markdown={content} />
 					</div>
 				</div>
 				<Sidebar article={article} />
@@ -121,7 +88,9 @@ export async function getStaticProps({ params }) {
 		},
 	});
 
-	const { data } = articlesRes;
+	const { data, meta } = articlesRes;
+
+	console.log(meta);
 
 	return {
 		props: {

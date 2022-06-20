@@ -1,5 +1,5 @@
 .relatedPostsBox {
-    width: 100%;
+    margin: 0 auto;
 }
 
 .heading {
@@ -31,20 +31,18 @@
     }
 
     .heading {
-        text-align: center;
+        text-align: left;
     }
 
     .heading::after {
-        content: none
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 760px) {
     .relatedPosts {
         grid-template-columns: none;
         grid-template-rows: repeat(3, 1fr);
         margin: 20px auto 0 auto;
-        width: 75%;
     }
 
 }

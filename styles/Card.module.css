@@ -9,7 +9,7 @@
 
 .cardHeader {
   width: 100%;
-  padding: 12px;
+  padding: 8px;
   position: relative;
 }
 
@@ -109,6 +109,7 @@
   border-radius: 4px;
   font-size: 13px;
   animation: none !important;
+  cursor: pointer;
 }
 
 .badgeStyle a {
@@ -154,5 +155,10 @@
   .cardHeader a {
     padding: 3px 14px;
     font-size: 14px;
+  }
+
+  .badgeStyle {
+    font-size: 10px;
+    width: 135px;
   }
 }

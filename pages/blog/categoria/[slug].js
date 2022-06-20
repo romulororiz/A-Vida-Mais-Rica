@@ -21,13 +21,13 @@ const CategoryPage = ({ category }) => {
 	}, []);
 
 	return (
-		<Layout title={`${name} - A vida mais rica`}>
+		<Layout title={`${name} | A Vida + Rica`}>
 			<div className={styles.categoryPage}>
 				<div className={styles.backToHome}>
 					<Link href={'/'}>
 						<a>
 							<FaChevronLeft className={styles.icon} />
-							Back to Home
+							Voltar
 						</a>
 					</Link>
 				</div>

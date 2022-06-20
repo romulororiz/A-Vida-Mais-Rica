@@ -64,7 +64,7 @@ const Header = () => {
 
 			{/* Desktop Nav */}
 			<nav className={styles.nav}>
-				<ul className={stickyNav ? styles.stickyNavItems : undefined}>
+				<ul>
 					<li>
 						<Link href='/'>Home</Link>
 					</li>
@@ -72,23 +72,23 @@ const Header = () => {
 						<a>Categorias</a>
 						<ul className={styles.dropdownContent}>
 							<li className={styles.dropdownItem}>
-								<Link href='/blog/category/investimentos'>Investimentos</Link>
+								<Link href='/blog/categoria/investimentos'>Investimentos</Link>
 							</li>
 							<li className={styles.dropdownItem}>
-								<Link href='/blog/category/financas-pessoais'>
+								<Link href='/blog/categoria/financas-pessoais'>
 									Finanças Pessoais
 								</Link>
 							</li>
 							<li className={styles.dropdownItem}>
-								<Link href='/blog/category/empreender'>Empreender</Link>
+								<Link href='/blog/categoria/empreender'>Empreender</Link>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<Link href='/about'>Sobre</Link>
+						<Link href='/sobre'>Sobre</Link>
 					</li>
 					<li>
-						<Link href='/contact'>Contato</Link>
+						<Link href='/contato'>Contato</Link>
 					</li>
 				</ul>
 			</nav>
@@ -115,48 +115,22 @@ const Header = () => {
 					<li>
 						<Link href='/'>Home</Link>
 					</li>
-					<li className={styles.dropdownNavItemMobile}>
-						<a>Blog</a>
-						{/* <ul className={styles.dropdownContentMobile}>
-							<li>
-								<Link
-									className={styles.dropdownItemMobile}
-									href='/blog/category/nature'
-								>
-									Nature
-								</Link>
-							</li>
-							<li>
-								<Link
-									className={styles.dropdownItemMobile}
-									href='/blog/category/food'
-								>
-									Food
-								</Link>
-							</li>
-							<li>
-								<Link
-									className={styles.dropdownItemMobile}
-									href='/blog/category/tech'
-								>
-									Tech
-								</Link>
-							</li>
-							<li>
-								<Link
-									className={styles.dropdownItemMobile}
-									href='/blog/category/news'
-								>
-									News
-								</Link>
-							</li>
-						</ul> */}
+					<li>
+						<Link href={'/blog/categoria/investimentos'}>Investimentos</Link>
 					</li>
 					<li>
-						<Link href='/about'>About</Link>
+						<Link href={'/blog/categoria/financas-pessoais'}>
+							Finanças Pessoais
+						</Link>
 					</li>
 					<li>
-						<Link href='/contact'>Contact</Link>
+						<Link href={'/blog/categoria/empreender'}>Empreender</Link>
+					</li>
+					<li>
+						<Link href='/sobre'>Sobre</Link>
+					</li>
+					<li>
+						<Link href='/contato'>Contato</Link>
 					</li>
 				</ul>
 

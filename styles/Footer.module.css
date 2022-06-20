@@ -1,11 +1,11 @@
 
 .footer img {
-    width: 100%;
+    width: 180px;
 }
 
 .footer {
     width: 100%;
-    padding: 40px 30px;
+    padding: 40px 50px;
     background-color: #0a0a0a;
     color: #fff;
     display: flex;
@@ -20,7 +20,6 @@
 }
 
 .logoBox {
-    width: 110px;
     min-width: 100px;
 }
 
@@ -30,6 +29,7 @@
 
 .menuIcons ul {
     display: flex;
+    margin-left: -50px;
 }
 
 .menuIcons a {
@@ -54,7 +54,6 @@
 .icon {
     font-size: 25px;
     cursor: pointer;
-
 }
 
 .bottomFooter {
@@ -82,6 +81,10 @@
 
     .topFooter {
         flex-direction: column-reverse;
+    }
+
+    .menuIcons ul {
+        margin-left: 0;
     }
 
     .menuIcons a {

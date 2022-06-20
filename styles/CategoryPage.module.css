@@ -15,7 +15,6 @@
     height: 2px;
     width: 320px;
     background-color: #000;
-
 }
 
 .postsGrid {
@@ -49,6 +48,10 @@
     .postsGrid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .heading {
+        font-size: 22px;
+    }
 }
 
 @media (max-width: 750px) {
@@ -64,4 +67,14 @@
         font-size: 28px;
     }
     
+}
+
+@media (max-width: 500px) {
+    .heading {
+        font-size: 20px;
+    }
+
+    .categoryPage h1::after {
+        width: 220px;
+    }
 }
