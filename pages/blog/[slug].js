@@ -42,7 +42,7 @@ const PostPage = ({ article }) => {
 						</div>
 						<div className={styles.postTitle}>
 							<h1>{title}</h1>
-							<Link href={`/blog/category/${category.data.attributes.slug}`}>
+							<Link href={`/blog/categoria/${category.data.attributes.slug}`}>
 								{category.data.attributes.name}
 							</Link>
 						</div>

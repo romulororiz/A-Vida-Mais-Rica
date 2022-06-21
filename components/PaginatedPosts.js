@@ -30,6 +30,8 @@ const PaginatedPosts = ({ itemsPerPage, articles, category }) => {
 	// Break point for mobile
 	// Pagination gets too big for smaller screens
 
+	console.log(currentItems);
+
 	return (
 		<>
 			<div className={styles.postsGrid}>

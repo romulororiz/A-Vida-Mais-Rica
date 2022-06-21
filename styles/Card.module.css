@@ -5,11 +5,13 @@
   flex-wrap: wrap;
   background: var(--light-color);
   transition: .2s ease-in-out;
+  border-radius: 5px;
+  box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.35);
 }
 
 .cardHeader {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   position: relative;
 }
 
@@ -20,9 +22,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  color: #000;
+  color: #fff;
   padding: 6px 18px;
   border-radius: 30px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  transition: .2s ease;
+}
+
+.cardHeader a:hover {
+  background-color: #fff;
+  color: #333;
 }
 
 .card:hover {
@@ -42,6 +52,9 @@
   position: relative;
   transition: all .2s ease;
   cursor: pointer;
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .cardImage::after {
@@ -76,6 +89,7 @@
   display: flex;
   padding: 16px;
   margin-top: auto;
+  overflow: hidden;
 }
 
 .user {
