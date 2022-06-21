@@ -13,6 +13,11 @@ const Header = () => {
 	const [headerWithBg, setHeaderWithBg] = useState(false);
 
 	const router = useRouter();
+	// Call this function whenever you want to
+	// refresh props
+	const refreshData = () => {
+		router.replace(router.asPath);
+	};
 
 	useEffect(() => {
 		// Sticky header on scroll
@@ -113,24 +118,34 @@ const Header = () => {
 
 				<ul>
 					<li>
-						<Link href='/'>Home</Link>
-					</li>
-					<li>
-						<Link href={'/blog/categoria/investimentos'}>Investimentos</Link>
-					</li>
-					<li>
-						<Link href={'/blog/categoria/financas-pessoais'}>
-							Finanças Pessoais
+						<Link href='/'>
+							<a onClick={() => setShowMenu(false)}>Home</a>
 						</Link>
 					</li>
 					<li>
-						<Link href={'/blog/categoria/empreender'}>Empreender</Link>
+						<Link href={'/blog/categoria/investimentos'}>
+							<a onClick={() => setShowMenu(false)}>Investimentos</a>
+						</Link>
 					</li>
 					<li>
-						<Link href='/sobre'>Sobre</Link>
+						<Link href={'/blog/categoria/financas-pessoais'}>
+							<a onClick={() => setShowMenu(false)}>Finanças Pessoais</a>
+						</Link>
 					</li>
 					<li>
-						<Link href='/contato'>Contato</Link>
+						<Link href={'/blog/categoria/empreender'}>
+							<a onClick={() => setShowMenu(false)}>Empreender</a>
+						</Link>
+					</li>
+					<li>
+						<Link href='/sobre'>
+							<a onClick={() => setShowMenu(false)}>Sobre</a>
+						</Link>
+					</li>
+					<li>
+						<Link href='/contato'>
+							<a onClick={() => setShowMenu(false)}>Contato</a>
+						</Link>
 					</li>
 				</ul>
 

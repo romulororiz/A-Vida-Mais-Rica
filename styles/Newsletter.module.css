@@ -83,7 +83,7 @@
     background-color: rgba(81, 81, 81, 0.95);
 }
 
-/* Newsletter - HomePage */
+/* Newsletter - FullWidth */
 .newsletterfullWidth {
     padding: 15px;
     margin-bottom: 60px;
@@ -141,5 +141,15 @@
 
     .newsletterInputfullWidth input, .newsletterInput input {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .newsletterInfofullWidth h4 {
+        font-size: 18px;
+    }
+
+    .newsletterInfofullWidth p {
+        font-size: 12px;
     }
 }

@@ -66,10 +66,10 @@ const Contact = () => {
 							+41 123 456 789
 						</li>
 						<li className={styles.contactInfoItem}>
-							<span>
+							<a href='mailto:gregoryroriz25@gmail.com' target='_blank'>
 								<FiAtSign className={`${styles.icon} ${styles.email}`} />
-							</span>{' '}
-							gregoryroriz@avidamaisrica.com
+							</a>{' '}
+							gregoryroriz25@gmail.com
 						</li>
 					</ul>
 				</div>

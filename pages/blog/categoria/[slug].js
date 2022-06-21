@@ -1,21 +1,20 @@
 import Layout from '@/components/Layout';
 import React, { useEffect, useState } from 'react';
 import { fetchAPI } from 'lib/api';
-import Card from '@/components/Card';
-import styles from '@/styles/CategoryPage.module.css';
+import { useRouter } from 'next/router';
+import Newsletter from '@/components/Newsletter';
 import Link from 'next/link';
 import { FaChevronLeft } from 'react-icons/fa';
-import Newsletter from '@/components/Newsletter';
-import { useRouter } from 'next/router';
+import styles from '@/styles/CategoryPage.module.css';
+import PaginatedPosts from '@/components/PaginatedPosts';
 
 const CategoryPage = ({ category }) => {
 	const [fullWidthNewsletter, setFullWidthNewsletter] = useState(false);
-
 	const { name, articles } = category.attributes;
 
 	const router = useRouter();
 	useEffect(() => {
-		if (router.pathname === `/blog/category/[slug]`) {
+		if (router.pathname === `/blog/categoria/[slug]`) {
 			setFullWidthNewsletter(true);
 		}
 	}, []);
@@ -32,28 +31,17 @@ const CategoryPage = ({ category }) => {
 					</Link>
 				</div>
 				<h1 className={styles.heading}>{name}</h1>
-				<div className={styles.postsGrid}>
-					{articles.data &&
-						articles.data.map(article => (
-							<Card
-								key={article.id}
-								image={article.attributes.image}
-								title={article.attributes.title}
-								description={article.attributes.description}
-								slug={`/blog/${article.attributes.slug}`}
-								category={category.attributes}
-								authorImage={article.attributes.author.data.attributes.image}
-								authorName={article.attributes.author.data.attributes.name}
-								publishedAt={article.attributes.publishedAt}
-							/>
-						))}
-				</div>
-				<Newsletter
-					title={`Receba seu e-book gratuito`}
-					lead={`Nos informe seu email para que possamos enviar seu e-book gratuito. Fique tranquilo, seu e-mail esta completamente seguro conosco.`}
-					fullWidth={fullWidthNewsletter}
+				<PaginatedPosts
+					itemsPerPage={3}
+					category={category}
+					articles={articles.data}
 				/>
 			</div>
+			<Newsletter
+				title={`Receba seu e-book gratuito`}
+				lead={`Nos informe seu email para que possamos enviar seu e-book gratuito. Fique tranquilo, seu e-mail esta completamente seguro conosco.`}
+				fullWidth={fullWidthNewsletter}
+			/>
 		</Layout>
 	);
 };

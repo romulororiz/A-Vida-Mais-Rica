@@ -16,8 +16,6 @@ const Card = ({
 }) => {
 	const [categoryStyle, setCategoryStyle] = useState(`${styles.badgeStyle}`);
 
-	console.log(authorImage);
-
 	// Change category badge style depending on category name
 	useEffect(() => {
 		switch (category.slug) {
