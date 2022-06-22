@@ -38,10 +38,7 @@ const PaginatedPosts = ({ itemsPerPage, articles, category }) => {
 				{currentItems &&
 					currentItems
 						.sort((articleA, articleB) => {
-							return (
-								new Date(articleB.attributes.publishedAt) -
-								new Date(articleA.attributes.publishedAt)
-							);
+							return new Date(articleB.id) - new Date(articleA.id);
 						})
 						.map(article => (
 							<Card

@@ -5,20 +5,14 @@
     text-align: center;
 }
 
-.heading {
-    width: 350px;
-    text-align: center;
+.favoritePostsBox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-evenly;
+    align-items: center;
     margin: 0 auto;
-    margin-bottom: 60px;
-    border-bottom: 1px solid rgba(0,0,0,.4); 
-    line-height: 0.1em;
-}
-
-.heading span {
-    padding: 0 10px;
-    font-weight: 400;
-    background-color: var(--light-color) ;
-    font-size: 32px;
 }
 
 .postsGrid {

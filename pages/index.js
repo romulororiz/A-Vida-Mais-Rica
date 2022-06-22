@@ -4,11 +4,11 @@ import Newsletter from '@/components/Newsletter';
 import { fetchAPI } from 'lib/api';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { API_URL } from '../config';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import styles from '@/styles/Home.module.css';
+import FavPostCard from '@/components/FavPostCard';
 
-const HomePage = ({ articles, meta }) => {
+const HomePage = ({ articles, meta, favArticles }) => {
 	const [fullWidthNewsletter, setFullWidthNewsletter] = useState(false);
 	const [allArticles, setAllArticles] = useState(articles);
 	const [hasMore, setHasMore] = useState(true);
@@ -54,34 +54,55 @@ const HomePage = ({ articles, meta }) => {
 	return (
 		<Layout>
 			<div className={styles.homepage}>
-				<Newsletter
-					title={`Receba seu e-book gratuito`}
-					lead={`Nos informe seu email para que possamos enviar seu e-book gratuito. Fique tranquilo, seu e-mail esta completamente seguro conosco.`}
-					fullWidth={fullWidthNewsletter}
-				/>
-				<InfiniteScroll
-					className={styles.postsGrid}
-					dataLength={allArticles.length}
-					next={getNextArticles}
-					hasMore={hasMore}
-				>
-					{allArticles &&
-						allArticles.map(article => (
-							<Card
-								key={article.id}
-								image={article.attributes.image}
-								title={article.attributes.title}
-								description={article.attributes.description}
-								slug={`/blog/${article.attributes.slug}`}
-								category={article.attributes.category.data.attributes}
-								authorImage={article.attributes.author.data.attributes.image}
-								authorName={article.attributes.author.data.attributes.name}
-								publishedAt={article.attributes.publishedAt}
-							/>
-						))}
-				</InfiniteScroll>
-				{isLoading && <h4 className={styles.loadingMessage}>Loading...</h4>}
-				{!hasMore && <p className={styles.endMessage}>Você chegou ao fim</p>}
+				<section>
+					<div className={styles.favoritePostsBox}>
+						{favArticles &&
+							favArticles
+								.slice(0, 3)
+								.map((article, index) => (
+									<FavPostCard
+										key={article.id + index}
+										title={article.attributes.title}
+										image={article.attributes.image}
+										slug={`/blog/${article.attributes.slug}`}
+										category={article.attributes.category.data.attributes}
+										publishedAt={article.attributes.publishedAt}
+									/>
+								))}
+					</div>
+				</section>
+				<section>
+					<Newsletter
+						title={`Receba seu e-book gratuito`}
+						lead={`Nos informe seu email para que possamos enviar seu e-book gratuito. Fique tranquilo, seu e-mail esta completamente seguro conosco.`}
+						fullWidth={fullWidthNewsletter}
+					/>
+				</section>
+				<section>
+					<InfiniteScroll
+						className={styles.postsGrid}
+						dataLength={allArticles.length}
+						next={getNextArticles}
+						hasMore={hasMore}
+					>
+						{allArticles &&
+							allArticles.map(article => (
+								<Card
+									key={article.id}
+									image={article.attributes.image}
+									title={article.attributes.title}
+									description={article.attributes.description}
+									slug={`/blog/${article.attributes.slug}`}
+									category={article.attributes.category.data.attributes}
+									authorImage={article.attributes.author.data.attributes.image}
+									authorName={article.attributes.author.data.attributes.name}
+									publishedAt={article.attributes.publishedAt}
+								/>
+							))}
+					</InfiniteScroll>
+					{isLoading && <h4 className={styles.loadingMessage}>Loading...</h4>}
+					{!hasMore && <p className={styles.endMessage}>Você chegou ao fim</p>}
+				</section>
 			</div>
 		</Layout>
 	);
@@ -96,8 +117,18 @@ export async function getStaticProps() {
 		sort: ['publishedAt:desc'],
 	});
 
+	const favoritesRes = await fetchAPI('/articles', {
+		populate: ['image', 'category', 'author', 'author.image'],
+		filters: {
+			favorite: {
+				$eq: true,
+			},
+		},
+	});
+
 	return {
 		props: {
+			favArticles: favoritesRes.data,
 			articles: articlesRes.data,
 			meta: articlesRes.meta,
 		},

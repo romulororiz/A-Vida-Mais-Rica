@@ -21,7 +21,7 @@ const Card = ({
 		switch (category.slug) {
 			case 'investimentos':
 				setCategoryStyle(
-					`${styles.InvestimentosCategoryBadge} ${styles.badgeStyle}`
+					`${styles.investimentosCategoryBadge} ${styles.badgeStyle}`
 				);
 				break;
 			case 'financas-pessoais':

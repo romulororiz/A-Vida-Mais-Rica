@@ -29,6 +29,31 @@
   margin-right: 3px;
 }
 
+.badge {
+  width: 160px;
+  padding: 3px 16px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.badge a {
+  color: #fff;
+  font-weight: 300;
+}
+
+.investimentosCategoryBadge {
+  background-color: rgba(0, 0, 0, 0.90);
+}
+
+.financasCategoryBadge {
+  background-color: rgb(2, 145, 2);
+}
+
+.empreenderCategoryBadge {
+  background-color: rgb(0, 76, 169);
+}
+
 .user {
   display: flex;
   gap: 8px;
@@ -55,15 +80,6 @@
 
 .postTitle h1 {
   margin-bottom: 5px;
-}
-
-.postTitle a {
-  padding: 3px 18px;
-  text-align: center;
-  border-radius: 4px;
-  font-size: 14px;
-  color: #fff;
-  background-color: rgba(0,0,0,.85);
 }
 
 .postContent {

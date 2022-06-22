@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchAPI } from 'lib/api';
 import NextImage from '@/components/Image';
 import Moment from 'react-moment';
@@ -10,8 +10,28 @@ import Link from 'next/link';
 import styles from '@/styles/PostPage.module.css';
 
 const PostPage = ({ article }) => {
+	const [badgeStyle, setBadgeStyle] = useState(null);
+
 	const { title, description, category, content, image, author, publishedAt } =
 		article.attributes;
+
+	useEffect(() => {
+		switch (category.data.attributes.slug) {
+			case 'investimentos':
+				setBadgeStyle(`${styles.investimentosCategoryBadge}`);
+				break;
+			case 'financas-pessoais':
+				setBadgeStyle(`${styles.financasCategoryBadge}`);
+				break;
+			case 'empreender':
+				setBadgeStyle(`${styles.empreenderCategoryBadge}`);
+				break;
+			default:
+				break;
+		}
+	}, []);
+
+	console.log(badgeStyle);
 
 	return (
 		<Layout title={`${title} | A Vida + Rica`}>
@@ -42,9 +62,11 @@ const PostPage = ({ article }) => {
 						</div>
 						<div className={styles.postTitle}>
 							<h1>{title}</h1>
-							<Link href={`/blog/categoria/${category.data.attributes.slug}`}>
-								{category.data.attributes.name}
-							</Link>
+							<div className={`${styles.badge} ${badgeStyle}`}>
+								<Link href={`/blog/categoria/${category.data.attributes.slug}`}>
+									{category.data.attributes.name}
+								</Link>
+							</div>
 						</div>
 					</div>
 

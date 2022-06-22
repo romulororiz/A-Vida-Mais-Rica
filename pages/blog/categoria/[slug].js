@@ -32,7 +32,7 @@ const CategoryPage = ({ category }) => {
 				</div>
 				<h1 className={styles.heading}>{name}</h1>
 				<PaginatedPosts
-					itemsPerPage={3}
+					itemsPerPage={6}
 					category={category}
 					articles={articles.data}
 				/>
