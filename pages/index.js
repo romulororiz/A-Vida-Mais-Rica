@@ -37,8 +37,6 @@ const HomePage = ({ articles, meta, favArticles }) => {
 			});
 			const { data } = res;
 
-			console.log(data);
-
 			setAllArticles([...allArticles, ...data]);
 
 			setIsLoading(false);
@@ -115,7 +113,7 @@ const HomePage = ({ articles, meta, favArticles }) => {
 	);
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const articlesRes = await fetchAPI('/articles', {
 		populate: ['image', 'category', 'author', 'author.image'],
 		pagination: {
