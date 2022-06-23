@@ -28,15 +28,18 @@ const Contact = () => {
 		e.preventDefault();
 
 		try {
-			await axios.post('http://localhost:1337/api/messages', {
-				data: {
-					firstName,
-					lastName,
-					email,
-					number,
-					message,
-				},
-			});
+			await axios.post(
+				`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/messages`,
+				{
+					data: {
+						firstName,
+						lastName,
+						email,
+						number,
+						message,
+					},
+				}
+			);
 			setMessageSent(true);
 		} catch (error) {
 			console.log(`Error: ${error}`);
