@@ -55,6 +55,9 @@ const HomePage = ({ articles, meta, favArticles }) => {
 		<Layout>
 			<div className={styles.homepage}>
 				<section>
+					<div className={styles.heading}>
+						<span>Artigos mais lidos</span>
+					</div>
 					<div className={styles.favoritePostsBox}>
 						{favArticles &&
 							favArticles
@@ -91,6 +94,7 @@ const HomePage = ({ articles, meta, favArticles }) => {
 									key={article.id}
 									image={article.attributes.image}
 									title={article.attributes.title}
+									content={article.attributes.content}
 									description={article.attributes.description}
 									slug={`/blog/${article.attributes.slug}`}
 									category={article.attributes.category.data.attributes}

@@ -46,7 +46,7 @@ const RelatedPosts = ({ article }) => {
 				}
 			} catch (error) {
 				setIsLoading(false);
-				throw new Error(`Error: ${error}`);
+				throw new Error(`${error}`);
 			}
 		};
 		fetchArticles();

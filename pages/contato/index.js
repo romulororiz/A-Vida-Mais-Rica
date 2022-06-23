@@ -1,9 +1,9 @@
 import Layout from '@/components/Layout';
 import React, { useState } from 'react';
-import styles from '@/styles/ContactPage.module.css';
-import { FaWhatsapp, FaAt } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
 import { FiAtSign } from 'react-icons/fi';
 import axios from 'axios';
+import styles from '@/styles/ContactPage.module.css';
 
 const Contact = () => {
 	const [formData, setFormData] = useState({

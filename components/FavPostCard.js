@@ -3,7 +3,6 @@ import styles from '@/styles/FavPostCard.module.css';
 import { getStrapiMedia } from '../lib/media';
 import Moment from 'react-moment';
 import Link from 'next/link';
-import moment from 'moment';
 
 const FavPostCard = ({ title, image, slug, category, publishedAt }) => {
 	return (

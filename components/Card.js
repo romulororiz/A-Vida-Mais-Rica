@@ -3,18 +3,24 @@ import styles from '@/styles/Card.module.css';
 import Link from 'next/link';
 import Moment from 'react-moment';
 import NextImage from '@/components/Image';
+import MarkdownView from 'react-showdown';
 
 const Card = ({
 	image,
 	slug,
 	category,
 	title,
+	content,
 	description,
 	authorImage,
 	authorName,
 	publishedAt,
 }) => {
 	const [categoryStyle, setCategoryStyle] = useState(`${styles.badgeStyle}`);
+
+	// Slice content
+	const wordAmount = 250;
+	const slicedContent = content.slice(0, wordAmount);
 
 	// Change category badge style depending on category name
 	useEffect(() => {
@@ -50,19 +56,21 @@ const Card = ({
 				</div>
 
 				<div className={styles.cardBody}>
+					<h4>{title ? title : ''}</h4>
 					<div className={categoryStyle}>
 						<Link href={`/blog/categoria/${category.slug}`}>
 							<a>{category.name}</a>
 						</Link>
 					</div>
 
-					<h4>{title ? title : ''}</h4>
-
-					{description ? (
-						<p>
-							{description.slice(0, 120)}
-							{description.length > 120 && '...'}
-						</p>
+					{content ? (
+						<div className={styles.content}>
+							<MarkdownView
+								markdown={`${slicedContent}${
+									slicedContent.length > 200 ? '...' : ''
+								}`}
+							/>
+						</div>
 					) : (
 						''
 					)}

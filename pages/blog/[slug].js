@@ -31,8 +31,6 @@ const PostPage = ({ article }) => {
 		}
 	}, []);
 
-	console.log(badgeStyle);
-
 	return (
 		<Layout title={`${title} | A Vida + Rica`}>
 			{/* Title and Author section */}
@@ -111,8 +109,6 @@ export async function getStaticProps({ params }) {
 	});
 
 	const { data, meta } = articlesRes;
-
-	console.log(meta);
 
 	return {
 		props: {
