@@ -37,7 +37,7 @@ const About = ({ author }) => {
 	);
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const authorRes = await fetchAPI('/writers', { populate: '*' });
 
 	const { data } = authorRes;
