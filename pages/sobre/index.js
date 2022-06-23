@@ -9,6 +9,8 @@ import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 const About = ({ author }) => {
 	const { name, image, about } = author[0].attributes;
 
+	console.log(author);
+
 	return (
 		<Layout title='Sobre mim | A Vida + Rica'>
 			<div className={styles.aboutPage}>
@@ -46,6 +48,7 @@ export async function getStaticProps() {
 		props: {
 			author: data,
 		},
+		revalidate: 1,
 	};
 }
 
