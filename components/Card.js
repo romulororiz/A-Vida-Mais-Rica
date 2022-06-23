@@ -11,7 +11,6 @@ const Card = ({
 	category,
 	title,
 	content,
-	description,
 	authorImage,
 	authorName,
 	publishedAt,
@@ -46,57 +45,55 @@ const Card = ({
 	}, []);
 
 	return (
-		<Link href={slug}>
-			<div className={styles.card}>
+		<div className={styles.card}>
+			<Link href={slug}>
 				<div className={styles.cardHeader}>
 					<div className={styles.cardImage}>
 						<NextImage image={image} />
 					</div>
 					{slug ? <Link href={slug}>Saiba Mais</Link> : ''}
 				</div>
+			</Link>
 
-				<div className={styles.cardBody}>
-					<h4>{title ? title : ''}</h4>
-					<div className={categoryStyle}>
-						<Link href={`/blog/categoria/${category.slug}`}>
-							<a>{category.name}</a>
-						</Link>
+			<div className={styles.cardBody}>
+				<h4>{title ? title : ''}</h4>
+				<div className={categoryStyle}>
+					<Link href={`/blog/categoria/${category.slug}`}>
+						<a>{category.name}</a>
+					</Link>
+				</div>
+
+				{content ? (
+					<div className={styles.content}>
+						<MarkdownView
+							markdown={`${slicedContent}${
+								slicedContent.length > 200 ? '...' : ''
+							}`}
+						/>
 					</div>
+				) : (
+					''
+				)}
+			</div>
 
-					{content ? (
-						<div className={styles.content}>
-							<MarkdownView
-								markdown={`${slicedContent}${
-									slicedContent.length > 200 ? '...' : ''
-								}`}
-							/>
+			<div className={styles.cardFooter}>
+				<div className={styles.user}>
+					{authorImage ? (
+						<div className={styles.userAvatar}>
+							<NextImage image={authorImage} />
 						</div>
 					) : (
 						''
 					)}
-				</div>
-
-				<div className={styles.cardFooter}>
-					<div className={styles.user}>
-						{authorImage ? (
-							<div className={styles.userAvatar}>
-								<NextImage image={authorImage} />
-							</div>
-						) : (
-							''
-						)}
-						<div className={styles.userInfo}>
-							{authorName ? <h5>{authorName}</h5> : ''}
-							<small>
-								<Moment format='D MMM[,] YYYY [at] HH:mm A'>
-									{publishedAt}
-								</Moment>
-							</small>
-						</div>
+					<div className={styles.userInfo}>
+						{authorName ? <h5>{authorName}</h5> : ''}
+						<small>
+							<Moment format='D MMM[,] YYYY [at] HH:mm A'>{publishedAt}</Moment>
+						</small>
 					</div>
 				</div>
 			</div>
-		</Link>
+		</div>
 	);
 };
 

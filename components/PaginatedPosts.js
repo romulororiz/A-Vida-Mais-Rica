@@ -49,6 +49,7 @@ const PaginatedPosts = ({ itemsPerPage, articles, category }) => {
 								authorImage={article.attributes.author.data.attributes.image}
 								authorName={article.attributes.author.data.attributes.name}
 								publishedAt={article.attributes.publishedAt}
+								content={article.attributes.content}
 							/>
 						))}
 			</div>

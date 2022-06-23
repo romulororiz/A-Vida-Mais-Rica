@@ -59,7 +59,7 @@ const HomePage = ({ articles, meta, favArticles }) => {
 						<span>Artigos mais lidos</span>
 					</div>
 					<div className={styles.favoritePostsBox}>
-						{favArticles &&
+						{favArticles ? (
 							favArticles
 								.slice(0, 3)
 								.map((article, index) => (
@@ -71,7 +71,10 @@ const HomePage = ({ articles, meta, favArticles }) => {
 										category={article.attributes.category.data.attributes}
 										publishedAt={article.attributes.publishedAt}
 									/>
-								))}
+								))
+						) : (
+							<h3>Sem Artigos para mostrar</h3>
+						)}
 					</div>
 				</section>
 				<section>

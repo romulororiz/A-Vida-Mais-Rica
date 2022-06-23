@@ -85,36 +85,53 @@ const PostPage = ({ article }) => {
 	);
 };
 
-export async function getStaticPaths() {
-	const res = await fetchAPI('/articles');
+// export async function getStaticPaths() {
+// 	const res = await fetchAPI('/articles');
 
-	const { data } = res;
+// 	const { data } = res;
 
-	const paths = data.map(article => ({
-		params: { slug: article.attributes.slug },
-	}));
+// 	const paths = data.map(article => ({
+// 		params: { slug: article.attributes.slug },
+// 	}));
 
-	return {
-		paths,
-		fallback: true,
-	};
-}
+// 	return {
+// 		paths,
+// 		fallback: true,
+// 	};
+// }
 
-export async function getStaticProps({ params }) {
+// export async function getStaticProps({ params }) {
+// 	const articlesRes = await fetchAPI('/articles', {
+// 		populate: ['image', 'category', 'author', 'author.image'],
+// 		filters: {
+// 			slug: params.slug,
+// 		},
+// 	});
+
+// 	const { data } = articlesRes;
+
+// 	return {
+// 		props: {
+// 			article: data[0],
+// 		},
+// 		revalidate: 1,
+// 	};
+// }
+
+export async function getServerSideProps({ query: { slug } }) {
 	const articlesRes = await fetchAPI('/articles', {
 		populate: ['image', 'category', 'author', 'author.image'],
 		filters: {
-			slug: params.slug,
+			slug: slug,
 		},
 	});
 
-	const { data, meta } = articlesRes;
+	const { data } = articlesRes;
 
 	return {
 		props: {
 			article: data[0],
 		},
-		revalidate: 1,
 	};
 }
 
