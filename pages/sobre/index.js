@@ -46,7 +46,6 @@ export async function getServerSideProps() {
 		props: {
 			author: data,
 		},
-		revalidate: 1,
 	};
 }
 

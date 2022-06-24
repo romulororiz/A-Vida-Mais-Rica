@@ -137,7 +137,6 @@ export async function getServerSideProps() {
 			articles: articlesRes.data,
 			meta: articlesRes.meta,
 		},
-		revalidate: 1,
 	};
 }
 
