@@ -8,8 +8,9 @@
 .contactPageDetails {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     width: 55%;
+    margin-top: 25px;
     margin-right: 25px;
 }
 
@@ -180,10 +181,6 @@
     .contactPage {
         flex-direction: column;
     }
-    
-    .contactPageDetails {
-        text-align: left;
-    }
 
     .heading {
         margin: 12px 0;
@@ -207,7 +204,7 @@
  
 @media (max-width: 500px) {
     .contactPageDetails {
-        text-align: center;
+        text-align: left;
     }
     
     .heading {
