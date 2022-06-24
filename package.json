@@ -2,7 +2,6 @@
 	"name": "frontend",
 	"version": "0.1.0",
 	"private": true,
-	"proxy": "http://192.168.1.108:1337/",
 	"scripts": {
 		"dev": "(if exist .next rd /s /q .next 2>nul) && next dev",
 		"build": "next build",
@@ -25,6 +24,7 @@
 	},
 	"devDependencies": {
 		"@types/qs": "^6.9.7",
+		"babel-eslint": "^10.1.0",
 		"eslint": "8.16.0",
 		"eslint-config-next": "12.1.6"
 	}

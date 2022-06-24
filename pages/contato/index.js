@@ -63,13 +63,18 @@ const Contact = () => {
 							<a
 								href={`https://wa.me/410782252997?text=Quero+tornar+a+minha+Vida+%2B+Rica%21`}
 								target='_blank'
+								rel='noreferrer'
 							>
 								<FaWhatsapp className={`${styles.icon} ${styles.whatsapp}`} />
 							</a>{' '}
 							+41 123 456 789
 						</li>
 						<li className={styles.contactInfoItem}>
-							<a href='mailto:gregoryroriz25@gmail.com' target='_blank'>
+							<a
+								href='mailto:gregoryroriz25@gmail.com'
+								target='_blank'
+								rel='noreferrer'
+							>
 								<FiAtSign className={`${styles.icon} ${styles.email}`} />
 							</a>{' '}
 							gregoryroriz25@gmail.com

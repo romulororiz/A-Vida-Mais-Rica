@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import styles from '@/styles/Footer.module.css';
 import Link from 'next/link';
@@ -10,7 +11,11 @@ const Footer = () => {
 				<div className={styles.topFooter}>
 					<div className={styles.logoBox}>
 						<Link href='/'>
-							<img className={styles.logo} src='/assets/logo.svg'></img>
+							<img
+								className={styles.logo}
+								src='/assets/logo.svg'
+								alt='logo'
+							></img>
 						</Link>
 					</div>
 					<div className={styles.menuIcons}>

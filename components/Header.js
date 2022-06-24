@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from 'react';
 import styles from '@/styles/Header.module.css';
 import Link from 'next/link';
-import Image from 'next/image';
 import Search from './Search';
 import { IoMenu, IoClose } from 'react-icons/io5';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
@@ -34,7 +34,7 @@ const Header = () => {
 		if (router.pathname !== '/') {
 			setHeaderWithBg(true);
 		}
-	}, []);
+	}, [router.pathname]);
 
 	// Mobile menu handler
 	const mobileMenuHandler = () => {
@@ -63,6 +63,7 @@ const Header = () => {
 							stickyNav ? styles.logoSticky : undefined
 						}`}
 						src='/assets/logo.svg'
+						alt='logo'
 					></img>
 				</Link>
 			</div>
