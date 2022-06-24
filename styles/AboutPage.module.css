@@ -73,17 +73,29 @@
 
 .icons {
     display: flex;
-    width: 120px;
+    width: 150px;
     align-items: center;
     justify-content: space-around;
     margin-top: -10px;
-
 }
 
 .icon {
     cursor: pointer;
     font-size: 30px;
-    color: #f5f2f2;
+    color: #fff;
+    transition: .2s ease;
+}
+
+.youtube:hover {
+    color: #ff0000;
+}
+
+.twitter:hover {
+    color: #1C9CEA;
+}
+
+.instagram:hover {
+    color: #c13584;
 }
 
 @media(max-width: 920px) {

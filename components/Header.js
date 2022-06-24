@@ -4,7 +4,7 @@ import styles from '@/styles/Header.module.css';
 import Link from 'next/link';
 import Search from './Search';
 import { IoMenu, IoClose } from 'react-icons/io5';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
 const Header = () => {
@@ -13,11 +13,6 @@ const Header = () => {
 	const [headerWithBg, setHeaderWithBg] = useState(false);
 
 	const router = useRouter();
-	// Call this function whenever you want to
-	// refresh props
-	const refreshData = () => {
-		router.replace(router.asPath);
-	};
 
 	useEffect(() => {
 		// Sticky header on scroll
@@ -72,7 +67,7 @@ const Header = () => {
 			<nav className={styles.nav}>
 				<ul>
 					<li>
-						<Link href='/'>Home</Link>
+						<Link href='/'>Início</Link>
 					</li>
 					<li className={styles.dropdownNavItem}>
 						<a>Categorias</a>
@@ -120,7 +115,7 @@ const Header = () => {
 				<ul>
 					<li>
 						<Link href='/'>
-							<a onClick={() => setShowMenu(false)}>Home</a>
+							<a onClick={() => setShowMenu(false)}>Início</a>
 						</Link>
 					</li>
 					<li>
@@ -154,9 +149,27 @@ const Header = () => {
 				<div className={styles.bottomMobileNav}>
 					{/* Search Component */}
 					<div className={styles.socialIcons}>
-						<FaFacebook className={styles.socialIcon} />
-						<FaTwitter className={styles.socialIcon} />
-						<FaInstagram className={styles.socialIcon} />
+						<a
+							href='https://www.youtube.com/channel/UCcfxbN1sySfe1jouSpMJGFg'
+							target='_blank'
+							rel='noreferrer'
+						>
+							<FaYoutube className={`${styles.icon} ${styles.youtube}`} />
+						</a>
+						<a
+							href='https://twitter.com/AVidamaisRica'
+							target='_blank'
+							rel='noreferrer'
+						>
+							<FaTwitter className={`${styles.icon} ${styles.twitter}`} />
+						</a>
+						<a
+							href='https://www.instagram.com/avidamaisrica/'
+							target='_blank'
+							rel='noreferrer'
+						>
+							<FaInstagram className={`${styles.icon} ${styles.instagram}`} />
+						</a>
 					</div>
 				</div>
 			</nav>

@@ -54,7 +54,22 @@
 .icon {
     font-size: 25px;
     cursor: pointer;
+    color: #fff;
+    transition: .2s ease;
 }
+
+.youtube:hover {
+    color: #ff0000;
+}
+
+.twitter:hover {
+    color: #1C9CEA;
+}
+
+.instagram:hover {
+    color: #c13584;
+}
+
 
 .bottomFooter {
     display: flex;

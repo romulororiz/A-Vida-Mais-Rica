@@ -50,13 +50,11 @@ const Contact = () => {
 		<Layout title='Contato | A Vida + Rica'>
 			<div className={styles.contactPage}>
 				<div className={styles.contactPageDetails}>
-					<h1 className={styles.heading}>
-						Lorem ipsum dolor sit amet consectetur adipisicing.
-					</h1>
+					<h1 className={styles.heading}>Contato</h1>
 					<p className={styles.lead}>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
-						fugiat? Accusantium unde facere assumenda totam magnam recusandae
-						quod asperiores ea?
+						Para agradecimentos, críticas, sugestões ou perguntas nos envie uma
+						mensagem através do formulário ou diretamente no Whatsapp ou E-mail
+						clicando nos ícones abaixo.
 					</p>
 					<ul className={styles.contactInfo}>
 						<li className={styles.contactInfoItem}>
@@ -67,7 +65,7 @@ const Contact = () => {
 							>
 								<FaWhatsapp className={`${styles.icon} ${styles.whatsapp}`} />
 							</a>{' '}
-							+41 123 456 789
+							+41 078 225 2997
 						</li>
 						<li className={styles.contactInfoItem}>
 							<a

@@ -12,11 +12,13 @@ const Showcase = () => {
 						rumo à uma <span>Vida + Rica</span>
 					</p>
 				</div>
-				<Link href={`/sobre`}>
-					<a>
-						Saiba Mais <span>&rarr;</span>
-					</a>
-				</Link>
+				<div className={styles.saibaMais}>
+					<Link href={`/sobre`}>
+						<a>
+							Saiba Mais <span>&rarr;</span>
+						</a>
+					</Link>
+				</div>
 			</div>
 		</div>
 	);

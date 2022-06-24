@@ -58,7 +58,7 @@ const RelatedPosts = ({ article }) => {
 
 	return (
 		<div className={styles.relatedPostsBox}>
-			<h3 className={styles.heading}>Related Posts</h3>
+			<h3 className={styles.heading}>Posts Relacionados</h3>
 			<div className={styles.relatedPosts}>
 				{relatedArticles.slice(0, maxPosts).map(article => (
 					<RelatedPostsCard key={article.id} article={article} />

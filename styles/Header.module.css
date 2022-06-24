@@ -165,6 +165,18 @@
     content: none;
 }
 
+.youtube:hover {
+    color: #ff0000;
+}
+
+.twitter:hover {
+    color: #1C9CEA;
+}
+
+.instagram:hover {
+    color: #c13584;
+}
+
 /* Mobile Nav */
 @media (max-width: 945px) {
 .header {
@@ -188,7 +200,7 @@
     margin-top: 30px;
 }
 
-.icon, .socialIcon {
+.icon {
     font-size: 35px;
     cursor: pointer;
     color: #fff;

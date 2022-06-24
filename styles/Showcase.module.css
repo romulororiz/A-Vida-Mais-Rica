@@ -17,7 +17,6 @@
 .container a {
     width: 120px;
     margin-top: 10px;
-    text-align: left;
     text-transform: uppercase;
     transition: .2s;
     color: #fff;            
@@ -81,14 +80,14 @@
     }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 700px) {
     .topHeading {
-        font-size: 22px;
+        font-size: 26px;
         margin-bottom: -8px;
     }
 
     .subHeading {
-        font-size: 20px;
+        font-size: 30px;
     }
 
 }
@@ -97,10 +96,21 @@
     .showcase {
         margin-bottom: 0;
     }
+    .topHeading {
+        font-size: 22px;
+        margin-bottom: -8px;
+    }
 
-    .container {
-        width: 90%;
-        place-content: center;
+    .subHeading {
+        font-size: 26px;
+    }
+
+    .saibaMais {
+        text-align: center;
+    }
+
+    .saibaMais a span {
+        margin-left: -15px;
     }
 
 }

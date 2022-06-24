@@ -30,6 +30,20 @@
 .icon {
     font-size: 32px;
     cursor: pointer;
+    color: #333;
+    transition: .2s ease;
+}
+
+.youtube:hover {
+    color: #ff0000;
+}
+
+.twitter:hover {
+    color: #1C9CEA;
+}
+
+.instagram:hover {
+    color: #c13584;
 }
 
 .icons {
