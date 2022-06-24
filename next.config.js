@@ -3,7 +3,7 @@ const nextConfig = {
 	reactStrictMode: true,
 	images: {
 		loader: 'default',
-		domains: ['a-vida-mais-rica.herokuapp.com'],
+		domains: ['a-vida-mais-rica.herokuapp.com', 'localhost'],
 	},
 };
 
