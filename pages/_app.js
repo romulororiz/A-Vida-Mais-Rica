@@ -8,8 +8,6 @@ import ScrollTop from '@/components/ScrollTop';
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }) => {
-	const { global } = pageProps;
-
 	return (
 		<>
 			<Component {...pageProps} />
