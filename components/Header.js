@@ -73,15 +73,15 @@ const Header = () => {
 						<a>Categorias</a>
 						<ul className={styles.dropdownContent}>
 							<li className={styles.dropdownItem}>
-								<Link href='/blog/categoria/investimentos'>Investimentos</Link>
+								<Link href='/blog/categorias/investimentos'>Investimentos</Link>
 							</li>
 							<li className={styles.dropdownItem}>
-								<Link href='/blog/categoria/financas-pessoais'>
+								<Link href='/blog/categorias/financas-pessoais'>
 									Finanças Pessoais
 								</Link>
 							</li>
 							<li className={styles.dropdownItem}>
-								<Link href='/blog/categoria/empreender'>Empreender</Link>
+								<Link href='/blog/categorias/empreender'>Empreender</Link>
 							</li>
 						</ul>
 					</li>
@@ -119,17 +119,17 @@ const Header = () => {
 						</Link>
 					</li>
 					<li>
-						<Link href={'/blog/categoria/investimentos'}>
+						<Link href={'/blog/categorias/investimentos'}>
 							<a onClick={() => setShowMenu(false)}>Investimentos</a>
 						</Link>
 					</li>
 					<li>
-						<Link href={'/blog/categoria/financas-pessoais'}>
+						<Link href={'/blog/categorias/financas-pessoais'}>
 							<a onClick={() => setShowMenu(false)}>Finanças Pessoais</a>
 						</Link>
 					</li>
 					<li>
-						<Link href={'/blog/categoria/empreender'}>
+						<Link href={'/blog/categorias/empreender'}>
 							<a onClick={() => setShowMenu(false)}>Empreender</a>
 						</Link>
 					</li>

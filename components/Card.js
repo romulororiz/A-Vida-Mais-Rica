@@ -58,7 +58,7 @@ const Card = ({
 			<div className={styles.cardBody}>
 				<h4>{title ? title : ''}</h4>
 				<div className={categoryStyle}>
-					<Link href={`/blog/categoria/${category.slug}`}>
+					<Link href={`/blog/categorias/${category.slug}`}>
 						<a>{category.name}</a>
 					</Link>
 				</div>

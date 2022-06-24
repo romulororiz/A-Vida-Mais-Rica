@@ -50,7 +50,7 @@ const HomePage = ({ articles, meta, favArticles }) => {
 	}, [allArticles]);
 
 	return (
-		<Layout>
+		<Layout title='A Vida + Rica'>
 			<div className={styles.homepage}>
 				<section>
 					<div className={styles.heading}>

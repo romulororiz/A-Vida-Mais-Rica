@@ -14,7 +14,7 @@ const CategoryPage = ({ category }) => {
 
 	const router = useRouter();
 	useEffect(() => {
-		if (router.pathname === `/blog/categoria/[slug]`) {
+		if (router.pathname === `/blog/categorias/[slug]`) {
 			setFullWidthNewsletter(true);
 		}
 	}, []);

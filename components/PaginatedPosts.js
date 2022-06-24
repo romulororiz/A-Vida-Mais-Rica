@@ -54,7 +54,6 @@ const PaginatedPosts = ({ itemsPerPage, articles, category }) => {
 						))}
 			</div>
 			<ReactPaginate
-				// initialPage={router.asPath === `/blog/categoria/${category.slug}` && 0}
 				breakLabel='...'
 				nextLabel='próximo >'
 				onPageChange={handlePageClick}
