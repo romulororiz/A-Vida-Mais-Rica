@@ -37,7 +37,7 @@ const About = ({ author }) => {
 	);
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const authorRes = await fetchAPI('/writers', { populate: '*' });
 
 	const { data } = authorRes;
@@ -46,6 +46,7 @@ export async function getStaticProps() {
 		props: {
 			author: data,
 		},
+		revalidate: 1,
 	};
 }
 

@@ -113,7 +113,7 @@ const HomePage = ({ articles, meta, favArticles }) => {
 	);
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const articlesRes = await fetchAPI('/articles', {
 		populate: ['image', 'category', 'author', 'author.image'],
 		pagination: {
