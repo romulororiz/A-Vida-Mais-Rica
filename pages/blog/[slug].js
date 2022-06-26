@@ -61,7 +61,9 @@ const PostPage = ({ article }) => {
 						<div className={styles.postTitle}>
 							<h1>{title}</h1>
 							<div className={`${styles.badge} ${badgeStyle}`}>
-								<Link href={`/blog/categorias/${category.data.attributes.slug}`}>
+								<Link
+									href={`/blog/categorias/${category.data.attributes.slug}`}
+								>
 									{category.data.attributes.name}
 								</Link>
 							</div>
@@ -127,6 +129,12 @@ export async function getServerSideProps({ query: { slug } }) {
 	});
 
 	const { data } = articlesRes;
+
+	if (!data.length) {
+		return {
+			notFound: true,
+		};
+	}
 
 	return {
 		props: {

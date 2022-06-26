@@ -99,6 +99,12 @@ export async function getServerSideProps({ query: { slug } }) {
 
 	const { data } = categoriesRes;
 
+	if (!data.length) {
+		return {
+			notFound: true,
+		};
+	}
+
 	return {
 		props: {
 			category: data[0],

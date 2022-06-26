@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FiAtSign } from 'react-icons/fi';
 import axios from 'axios';
+import { API_URL } from '@/config/index';
 import styles from '@/styles/ContactPage.module.css';
 
 const Contact = () => {
@@ -28,18 +29,15 @@ const Contact = () => {
 		e.preventDefault();
 
 		try {
-			await axios.post(
-				`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/messages`,
-				{
-					data: {
-						firstName,
-						lastName,
-						email,
-						number,
-						message,
-					},
-				}
-			);
+			await axios.post(`${API_URL}/api/messages`, {
+				data: {
+					firstName,
+					lastName,
+					email,
+					number,
+					message,
+				},
+			});
 			setMessageSent(true);
 		} catch (error) {
 			console.log(`Error: ${error}`);
