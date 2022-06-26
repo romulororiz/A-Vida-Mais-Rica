@@ -24,12 +24,12 @@
 }
 
 .errorIcon {
-    color: #f1f100;
     margin-right: 10px;
     position: absolute;
     top: 0;
     left: -50px;
     font-size: 36px;
+    fill: #F1D831;
 }
 
 @media (max-width: 500px) {
