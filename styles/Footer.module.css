@@ -118,4 +118,13 @@
         width: 60%;
     }
 
+    .bottomFooter p{
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .bottomFooter p:first-child {
+        margin-bottom: 5px;
+    }
+
 }
