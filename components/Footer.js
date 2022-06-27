@@ -57,7 +57,8 @@ const Footer = () => {
 				</div>
 				<hr></hr>
 				<div className={styles.bottomFooter}>
-					<p>All Rights Reserved &copy; Romulo Roriz 2022</p>
+					<p>Todos os Direitos Reservados &copy; A Vida + Rica 2022</p>
+					<p>Criado e Desenvolvido por Rômulo Roriz</p>
 				</div>
 			</div>
 		</div>
