@@ -14,6 +14,10 @@ const Layout = ({ title, keywords, description, children }) => {
 				<title>{title}</title>
 				<meta name='description' content={description} />
 				<meta name='keywords' content={keywords} />
+				<meta
+					name='google-site-verification'
+					content='AIHkU7uwE26LtE6yMOkrFd9WMqwIGT9XLT1suf2Gfu8'
+				/>
 				<link rel='shortcut icon' href='/images/favicon.ico' />
 				<link
 					rel='apple-touch-icon'
