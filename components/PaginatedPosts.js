@@ -3,7 +3,6 @@ import ReactPaginate from 'react-paginate';
 import Card from './Card';
 import styles from '@/styles/CategoryPage.module.css';
 import paginationStyles from '@/styles/Pagination.module.css';
-import { useRouter } from 'next/router';
 
 const PaginatedPosts = ({ itemsPerPage, articles, category }) => {
 	const [currentItems, setCurrentItems] = useState(null);

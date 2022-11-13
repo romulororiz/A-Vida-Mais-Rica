@@ -1,7 +1,6 @@
 import App from 'next/app';
 import { createContext } from 'react';
 import '../styles/globals.css';
-import { fetchAPI } from '../lib/api';
 import ScrollTop from '@/components/ScrollTop';
 
 // Store Strapi Global object in context

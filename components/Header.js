@@ -4,7 +4,7 @@ import styles from '@/styles/Header.module.css';
 import Link from 'next/link';
 import Search from './Search';
 import { IoMenu, IoClose } from 'react-icons/io5';
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
 const Header = () => {
